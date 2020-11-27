@@ -15,6 +15,12 @@ const Pets = new Schema({
   age: {
     type: Number
   },
+  breed: {
+    type: Number
+  },
+  genre: {
+    type: string
+  },
   color: {
     type: string,
     required: true
