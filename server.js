@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 
 //checking connections
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Project 3')
 })
 
 // Add routes, both API and view
