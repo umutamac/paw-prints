@@ -1,5 +1,5 @@
 
 module.exports = {
-    Note: require("./Pets"),
+    Pets: require("./Pets"),
     User: require("./User")
   };

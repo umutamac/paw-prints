@@ -1,13 +1,14 @@
-
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
-
 
 const petsSchema = new Schema({
   name: {
     type: String,
     trim: true
+  },
+  imageURL: {
+    required: true,
+    type: String
   },
   pettype: {
     type: String
@@ -24,9 +25,6 @@ const petsSchema = new Schema({
   color: {
     type: String,
     required: true
-  },
-  image: {
-    type: String
   },
   date_lost: {
     type: Date
