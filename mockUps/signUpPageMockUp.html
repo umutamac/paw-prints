@@ -15,13 +15,26 @@
 </head>
 
 <body>
+    <div data-sticky-container>
+        <div data-sticky data-margin-top='0' data-top-anchor="150" data-options="marginTop:0;">
+            <div class="top-bar topbar-sticky-shrink">
+                <div class="top-bar-title">
+                    <img src="http://placehold.it/150x38" alt="" />
+                </div>
+                <div class="top-bar-right">
+                    <ul class="menu">
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="./logInPageMockUp.html">Sign In</a></li>
+                        <li><a href="./landingPageMockUp.html">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <header>
         <div>
-            <p style="text-align: right; padding: 20px; padding-right: 30px; margin: 0px;">
-                sign in
-            </p>
             <h1 style="text-align: center;">
-                <b><i><u>Paw Prints</u></i></b>
+                Paw Prints
             </h1>
         </div>
 
@@ -30,16 +43,29 @@
         <form>
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-6 cell">
+                    <div class="medium-7 cell">
                         <label>Email
                             <input type="text" placeholder="Email">
                         </label>
                     </div>
-                    <div class="medium-6 cell">
-                    </div>
-                    <div class="medium-6 cell">
+                    <div class="medium-7 cell">
                         <label>Password
                             <input type="text" placeholder="Password">
+                        </label>
+                    </div>
+                    <div class="medium-7 cell">
+                        <label>Phone Number
+                            <input type="text" placeholder="Phone Number">
+                        </label>
+                    </div>
+                    <div class="medium-7 cell">
+                        <label>City
+                            <input type="text" placeholder="City">
+                        </label>
+                    </div>
+                    <div class="medium-7 cell">
+                        <label>State
+                            <input type="text" placeholder="State">
                         </label>
                     </div>
                     <button style="border: 2px solid black" id="signUpButton">Sign Up</button>
