@@ -1,19 +1,16 @@
-
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-
-
-const User = new Schema({
+const userSchema = new Schema({
     name: {
         type: String,
         trim: true,
-        required: true
+        required: "Name is required"
     },
     password: {
         type: String,
-        required: "Password is Required",
+        required: "Password is required",
         validate: [({ length }) => length >= 6, "Password should be longer."
         ]
     },
@@ -22,15 +19,16 @@ const User = new Schema({
         required: true
     },
     email: {
-        type: string,
+        type: String,
         unique: true,
+        required: "An email is required",
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
     city: {
-        type: string
+        type: String
     },
     state: {
-        type: string,
+        type: String,
         required: true
     }
 
@@ -38,6 +36,6 @@ const User = new Schema({
 });
 
 
-const User = mongoose.model("User", User)
+const User = mongoose.model("User", userSchema)
 
 module.exports = User;
