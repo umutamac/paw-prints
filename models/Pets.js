@@ -16,7 +16,7 @@ const Pets = new Schema({
     type: Number
   },
   breed: {
-    type: Number
+    type: String
   },
   genre: {
     type: string
