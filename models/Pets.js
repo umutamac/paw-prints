@@ -9,6 +9,10 @@ const petsSchema = new Schema({
     type: String,
     trim: true
   },
+  imageURL: {
+    required: true,
+    type: String
+  },
   pettype: {
     type: String
   },
@@ -24,9 +28,6 @@ const petsSchema = new Schema({
   color: {
     type: String,
     required: true
-  },
-  image: {
-    type: String
   },
   date_lost: {
     type: Date
