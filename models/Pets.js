@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 
 
 
-const Pets = new Schema({
+const petsSchema = new Schema({
   name: {
     type: String,
     trim: true
   },
   pettype: {
-    type: string
+    type: String
   },
   age: {
     type: Number
@@ -19,28 +19,28 @@ const Pets = new Schema({
     type: String
   },
   genre: {
-    type: string
+    type: String
   },
   color: {
-    type: string,
+    type: String,
     required: true
   },
   image: {
-    type: string
+    type: String
   },
   date_lost: {
     type: Date
   },
   location: {
-    type: string,
+    type: String,
     required: true
   },
   status: {
-    type: string,
+    type: String,
     default: true
   },
   weight: {
-    type: number
+    type: Number
   },
   contact: [{
     type: Schema.Types.ObjectId,
@@ -50,7 +50,7 @@ const Pets = new Schema({
 });
 
 
-const Pets = mongoose.model("Pets", Pets)
+const Pets = mongoose.model("Pets", petsSchema)
 
 module.exports = Pets;
 
