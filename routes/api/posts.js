@@ -25,27 +25,28 @@ router.route("/:id")
   .delete(postController.remove);
 // .put(postController.update)
 
-//////////////// use multer upload method to organize file data to readable format
+
+///// When the form is submitted and /imgup is hit:
+// use multer upload method to organize file data to readable format
 router.post("/imgup", upload.single('file'), function (req, res, next) {
-
- // the req.body has the text inputs, and req.file
-
+ // the req.body has the text inputs, and req.file has the image file
   console.log(req.body)
 
   ///////////use cloudinary uploader to send file to bucket  and upload response
   cloudinary.uploader.upload(req.file.path, { tags: 'express_sample' })
-    .then(function (image) {
+    .then(function (cloudRes) {
       console.log('** file uploaded to Cloudinary service');
-      console.dir(image);
+      console.dir(cloudRes);
 
       ////save the file path to temp folder and delete file
       console.log(req.file.path + "\n^^^^^^^^^^^^^^")
       fs.unlink(req.file.path, err => { if (err) { console.log(err) } })
-      res.json(image.url)
+      res.json(cloudRes.url)
     })
-    .then(function () {
-      console.log('** photo saved');
-    })
+    
+
+
+
 })
 
 module.exports = router;
