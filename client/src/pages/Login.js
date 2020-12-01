@@ -3,7 +3,7 @@ import React from "react";
 
 function Login() {
     return (
-        <body>
+        <div id="loginContainer">
             <header>
                 <div>
                     <p>sign up</p>
@@ -39,12 +39,7 @@ function Login() {
                 </form>
             </div>
 
-        </body>
-
-
-
-
-
+        </div>
     );
 }
 

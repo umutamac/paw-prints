@@ -15,8 +15,8 @@ function App() {
         <Navbar />
 
         <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/home" component={HomePage} />
+          <Route exact path="/" component={Landing} /> {/*For users not logged in */}
+          <Route exact path="/home" component={HomePage} /> {/*For logged in users */}
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/upload" component={UploadPost} />

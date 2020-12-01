@@ -6,17 +6,17 @@ function Navbar() {
   return (
     <nav>
       <div>
-          <h1>Navbar Paw - Prints</h1>
-          <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"} >
-              Log in
-            </Link>
-          
-          
-          
-          <Link to="/signup" className={window.location.pathname === "/signup" || window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
-              Sign up
-            </Link>
-          
+        <h1>Navbar Paw - Prints</h1>
+        <Link to="/" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"} >
+          Log in
+        </Link>
+
+
+
+        <Link to="/signup" className={window.location.pathname === "/signup" || window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
+          Sign up
+        </Link>
+
       </div>
     </nav>
   );
