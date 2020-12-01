@@ -4,11 +4,6 @@
 #title, footer{
     text-align: center;
 }
-.top-bar-center {
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-}
 .menu-hover-lines {
     text-align: center;
     text-transform: uppercase;
@@ -68,8 +63,8 @@
   
 .hero-section {
     background: url("../asset/images/tealPrints.jpg") 50% no-repeat;
-    background-size: cover;
-    height: 85vh;
+    background-size: contain;
+    height: 100%;
     text-align: center;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -85,6 +80,9 @@
   .hero-section .hero-section-text {
     color: #fefefe;
     text-shadow: 1px 1px 2px #0a0a0a;
+  }
+  .grid-container{
+    
   }
   .pagination-pointed .pagination-pointed-button, .pagination-pointed .current, .pagination-pointed .pagination-previous {
     position: relative;
