@@ -43,8 +43,8 @@ function UploadPost() {
         <div>
             {redirect ? <Redirect push to='/home' /> : <div id="redirect"></div>}
 
-            <div id="UploadPostContainer">
-                <form id="postForm">
+            <div id="UploadPostContainer" >
+                <form id="postForm" onSubmit={uploadform}>
                     <h1>Create a post</h1>
                     <p>You will need to upload a picture of your pet</p>
                     <input id="petName" type='text' name="petName" placeholder="Pet Name" encType="multipart/form-data" value={petName} onChange={handleInp} />
@@ -53,7 +53,7 @@ function UploadPost() {
                     <textarea id="petExplanation" type='text' name="petExplanation" value={petExplanation} onChange={handleInp}
                         encType="multipart/form-data" placeholder="What does the pet look like, when was it last seen?" />
 
-                    <button id="uploadBtn" type='button' onClick={uploadform}>Upload</button>
+                    <button id="uploadBtn" type='submit'>Upload</button>
                 </form>
             </div>
         </div>
