@@ -23,11 +23,11 @@ router.route("/mypics")
   .post(postController.create);
 
 
-router
-  .route("/:id")
-  .get(postController.findById)
-  .put(postController.update)
-  .delete(postController.remove);
+// router
+//   .route("/:id")
+//   .get(postController.findById)
+//   .put(postController.update)
+//   .delete(postController.remove);
 
 ////////create reference to img url in mongodb
 router.route('/dbpic')
