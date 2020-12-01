@@ -15,11 +15,12 @@
     <title>Paw Prints</title>
 
     <link rel="stylesheet" href="landingPage.css">
+    <link rel="stylesheet" href="navBar.css">
 </head>
 
 <body>
-    <div data-sticky-container>
-        <div data-sticky data-margin-top='0' data-top-anchor="150" data-options="marginTop:0;">
+    <div id="navbar">
+        <div>
             <div class="top-bar topbar-sticky-shrink">
                 <div class="top-bar-title">
                     <img style="height:50px" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png" alt="paw prints" />
@@ -33,7 +34,7 @@
             </div>
         </div>
     </div>
-    <header>
+    <header class="content">
         <h1 id="title">Paw Prints</h1>
     </header>
     <div class="grid-container" id="find">
@@ -41,7 +42,7 @@
             <div class="medium-3 cell"></div>
             <div class="medium-6 cell">
                 <p>
-                <h4>find your lost pets here</h4>
+                <h4>find your lost pets <a href=signUpPageMockUp.html>here</a></h4>
                 <div class="grid-x grid-padding-x">
                     <div class="medium-4 cell" style="padding:2px;border:1px solid black">
                         <img
@@ -99,6 +100,7 @@
     <footer>
         &copy; 2020 Group 3
     </footer>
+    <script src="./navBar.js"></script>
 </body>
 
 </html>
