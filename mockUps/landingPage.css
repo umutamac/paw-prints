@@ -4,3 +4,163 @@
 #title, footer{
     text-align: center;
 }
+.top-bar-center {
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+.menu-hover-lines {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.35s ease;
+  }
+  
+  .menu-hover-lines li a {
+    padding: 0.75rem 0;
+    color: rgba(10, 10, 10, 0.5);
+    position: relative;
+    margin-left: 1rem;
+  }
+  
+  .menu-hover-lines li:first-child a {
+    margin-left: 0;
+  }
+  
+  .menu-hover-lines li.active > a {
+    background-color: transparent;
+  }
+  
+  .menu-hover-lines a:before,
+  .menu-hover-lines a::after {
+    height: 3px;
+    position: absolute;
+    content: '';
+    transition: all 0.35s ease;
+    background-color: #1779ba;
+    width: 0;
+  }
+  
+  .menu-hover-lines a::before {
+    top: 0;
+    left: 0;
+  }
+  
+  .menu-hover-lines a::after {
+    bottom: 0;
+    right: 0;
+  }
+  
+  .menu-hover-lines a:hover,
+  .menu-hover-lines li.active > a {
+    color: #0a0a0a;
+    transition: all 0.35s ease;
+  }
+  
+  .menu-hover-lines a:hover::before,
+  .menu-hover-lines .active a::before,
+  .menu-hover-lines a:hover::after,
+  .menu-hover-lines .active a::after {
+    width: 100%;
+  }
+  
+  
+.hero-section {
+    background: url("../asset/images/tealPrints.jpg") 50% no-repeat;
+    background-size: cover;
+    height: 85vh;
+    text-align: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .hero-section .hero-section-text {
+    color: #fefefe;
+    text-shadow: 1px 1px 2px #0a0a0a;
+  }
+  .pagination-pointed .pagination-pointed-button, .pagination-pointed .current, .pagination-pointed .pagination-previous {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #2c3840;
+    color: #fff;
+    outline: 0;
+    text-decoration: none;
+    transition: all 0.2s linear;
+  }
+  
+  .pagination-pointed .pagination-pointed-button:hover, .pagination-pointed .current:hover, .pagination-pointed .pagination-previous:hover {
+    background-color: #41525e;
+  }
+  
+  .pagination-pointed .current {
+    background: dodgerblue;
+  }
+  
+  .pagination-pointed .current:hover {
+    background-color: #0077ea;
+  }
+  
+  .pagination-pointed .pagination-next a {
+    border-radius: 4px 0 0 4px;
+    margin-right: 18px;
+  }
+  
+  .pagination-pointed .pagination-next a:hover::after {
+    border-left: 17px solid #41525e;
+  }
+  
+  .pagination-pointed .pagination-next a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -18px;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 17px solid #2c3840;
+    transition: all 0.2s linear;
+  }
+  
+  .pagination-pointed .pagination-previous {
+    border-radius: 0 4px 4px 0;
+    margin-left: 18px;
+  }
+  
+  .pagination-pointed .pagination-previous:hover::after {
+    border-right: 17px solid #41525e;
+  }
+  
+  .pagination-pointed .pagination-previous::before {
+    content: "";
+  }
+  
+  .pagination-pointed .pagination-previous::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -18px;
+    width: 0;
+    height: 0;
+    border-bottom: 17px solid transparent;
+    border-top: 17px solid transparent;
+    border-right: 17px solid #2c3840;
+    transition: all 0.2s linear;
+  }
