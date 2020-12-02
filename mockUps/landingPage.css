@@ -3,6 +3,13 @@
 } */
 #title, footer{
     text-align: center;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+h4 {
+  font-family: 'Nerko One', cursive
+}
+cell, p {
+  font-family: 'Kalam', cursive;
 }
 .menu-hover-lines {
     text-align: center;
