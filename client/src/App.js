@@ -46,6 +46,7 @@ class App extends Component {
     <Router>
       <div>
         <Navbar />
+<<<<<<< HEAD
         
         <Route exact path="/" component={Landing} />
         <Route exact path="/register" component={Register} />
@@ -55,6 +56,17 @@ class App extends Component {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </Switch>
 
+=======
+
+        <Switch>
+          <Route exact path="/" component={Landing} /> {/*For users not logged in */}
+          <Route exact path="/home" component={HomePage} /> {/*For logged in users */}
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/upload" component={UploadPost} />
+        </Switch>
+        
+>>>>>>> 0eccf63af3227cda39e60f92f9c19d3c68d5a462
       </div>
     </Router>
     </Provider>
