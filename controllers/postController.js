@@ -16,13 +16,15 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
+  create: function(data) {
     db.Pets
-      .create(req.body)
+      .create(data)
       .then(dbModel => {
         console.log("***********\n"+JSON.stringify(dbModel))
-        res.json(dbModel)})
-      .catch(err => res.status(422).json(err));
+        return dbModel
+      })
+      // .catch(err => {
+      //   return status(422).json(err) });
   },
   // update: function(req, res) {
   //   db.Pets
