@@ -69,7 +69,7 @@ function Landing() {
                                     <div className="cell">
                                         <div className="card">
                                             <img
-                                                src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2019/07/15092404/do-dogs-grieve-other-dogs.jpg" />
+                                                alt="animal" src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2019/07/15092404/do-dogs-grieve-other-dogs.jpg" />
                                             <div className="card-section">
                                                 <h4>This is Hercules.</h4>
                                                 <p>He was lost in Anchorage, Alaska.
@@ -80,7 +80,7 @@ function Landing() {
                                     <div className="cell">
                                         <div className="card">
                                             <img
-                                                src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2019/07/15092404/do-dogs-grieve-other-dogs.jpg" />
+                                                alt="animal" src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2019/07/15092404/do-dogs-grieve-other-dogs.jpg" />
                                             <div className="card-section">
                                                 <h4>This is Sheila.</h4>
                                                 <p>It has an easy to override visual style, and is appropriately subdued.</p>
@@ -90,7 +90,7 @@ function Landing() {
                                     <div className="cell">
                                         <div className="card">
                                             <img
-                                                src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2019/07/15092404/do-dogs-grieve-other-dogs.jpg" />
+                                                alt="animal" src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2019/07/15092404/do-dogs-grieve-other-dogs.jpg" />
                                             <div className="card-section">
                                                 <h4>This is Juan.</h4>
                                                 <p>It has an easy to override visual style, and is appropriately subdued.</p>
