@@ -10,7 +10,7 @@ function UploadPost() {
     const [petType, setpetType] = useState("");
     const [petExplanation, setpetExplanation] = useState("");
 
-    const handleInp = (event) => {
+    const handleInp = (event) => { // store each input value in a state using the same function
         let name = event.target.name
         let value = event.target.value
 
@@ -19,29 +19,28 @@ function UploadPost() {
         else if (name === "petExplanation") { setpetExplanation(value) }
     }
 
-    const handleFile = (event) => {
+    const handleFile = (event) => { // store the input value in a state
         setimg(event.target.files[0])
     }
 
     const uploadform = (event) => {
         event.preventDefault()
 
-        //package file info and send it back
-        var formData = new FormData();
+        var formData = new FormData();         //need to append all the values from the form in here using states
         formData.append("file",img)
         formData.append("name",petName)
         formData.append("pettype",petType)
         formData.append("explanation",petExplanation)
-
+        // POSSIBILITY: i could add the form id here so that I wouldnt have to do append for each input, need to test
 
         axios.post('/api/pics/imgup', formData).then((response) => {
             console.log(response)
-            setRedirect(true)
+            setRedirect(true) //once the form is submitted and a response comes back, redirect user to home page
         })
     }
     return (
         <div>
-            {redirect ? <Redirect push to='/home' /> : <div id="redirect"></div>}
+            {redirect ? <Redirect push to='/home' /> : <div id="redirect"></div> /*redirect user or add empty div (basically do nothing)*/}
 
             <div id="UploadPostContainer" >
                 <form id="postForm" onSubmit={uploadform}>

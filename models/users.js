@@ -6,13 +6,12 @@ const userSchema = new Schema({
     name: {
         type: String,
         trim: true,
-        required: "Name is required"
+        //required: "Name is required"
     },
     password: {
         type: String,
-        required: "Password is required",
-        validate: [({ length }) => length >= 6, "Password should be longer."
-        ]
+        required: true
+        //validate: [({ length }) => length >= 6, "Password should be longer."]
     },
     phonenumber: {
         type: String,
@@ -24,18 +23,22 @@ const userSchema = new Schema({
         required: "An email is required",
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
-    city: {
+    date: {
+        type: Date,
+        default: Date.now
+      }
+    /*city: {
         type: String
     },
     state: {
         type: String,
         required: true
     }
-
+*/
 
 });
 
 
-const User = mongoose.model("User", userSchema)
+const User = mongoose.model("users", userSchema)
 
 module.exports = User;
