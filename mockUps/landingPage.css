@@ -63,7 +63,7 @@
   
 .hero-section {
     background: url("../asset/images/tealPrints.jpg") 50% no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 100%;
     text-align: center;
     display: -webkit-flex;
