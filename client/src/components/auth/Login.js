@@ -37,7 +37,7 @@ if (nextProps.errors) {
   }  
 
 
-onChange = e => {
+  handleRegisterChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
 
@@ -54,7 +54,8 @@ console.log(userData);
 
 render() {
     const { errors } = this.state;
-return (
+    console.log(this.props.auth);
+    return (
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">
@@ -73,7 +74,7 @@ return (
             <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s12">
                 <input
-                  onChange={this.onChange}
+                  onChange={this.handleRegisterChange}
                   value={this.state.email}
                   error={errors.email}
                   id="email"
@@ -88,7 +89,7 @@ return (
               </div>
               <div className="input-field col s12">
                 <input
-                  onChange={this.onChange}
+                  onChange={this.handleRegisterChange}
                   value={this.state.password}
                   error={errors.password}
                   id="password"
@@ -131,6 +132,7 @@ Login.propTypes = {
 
 const mapStateToProps = state => ({
   auth: state.auth,
+
   errors: state.errors
 });
 
