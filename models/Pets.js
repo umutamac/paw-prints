@@ -22,20 +22,15 @@ const petsSchema = new Schema({
   genre: {
     type: String
   },
-  color: {
-    type: String,
-    required: true
-  },
   date_lost: {
     type: Date
   },
   location: {
     type: String,
-    required: true
   },
   status: {
     type: String,
-    default: true
+    //default: true
   },
   weight: {
     type: Number
