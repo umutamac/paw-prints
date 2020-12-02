@@ -3,11 +3,13 @@
 } */
 #title, footer{
     text-align: center;
+    font-family: 'Montserrat Subrayada', sans-serif;
 }
-.top-bar-center {
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+h4 {
+  font-family: 'Nerko One', cursive
+}
+cell, p {
+  font-family: 'Kalam', cursive;
 }
 .menu-hover-lines {
     text-align: center;
@@ -69,7 +71,7 @@
 .hero-section {
     background: url("../asset/images/tealPrints.jpg") 50% no-repeat;
     background-size: cover;
-    height: 85vh;
+    height: 100%;
     text-align: center;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -85,6 +87,9 @@
   .hero-section .hero-section-text {
     color: #fefefe;
     text-shadow: 1px 1px 2px #0a0a0a;
+  }
+  .grid-container{
+    
   }
   .pagination-pointed .pagination-pointed-button, .pagination-pointed .current, .pagination-pointed .pagination-previous {
     position: relative;
