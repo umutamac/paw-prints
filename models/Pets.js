@@ -2,48 +2,46 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const petsSchema = new Schema({
-  name: {
+  petname: {
     type: String,
     trim: true
   },
-  imageURL: {
-    required: true,
-    type: String
-  },
-  pettype: {
-    type: String
-  },
-  age: {
-    type: Number
-  },
-  breed: {
-    type: String
-  },
-  genre: {
-    type: String
-  },
-  date_lost: {
-    type: Date
-  },
-  location: {
+  petType: {
     type: String,
+    trim: true
+  },
+  petColor: {
+    type: String,
+    trim: true
+  },
+  petBreed: {
+    type: String,
+    trim: true
+  },
+  phoneNum: { 
+    type: String,
+  },
+  details: { 
+    type: String,
+  },
+  imageURL: {
+    type: String
+  },
+  date_lost: { 
+    type: Date
+    //doesn't have a corresponding input in form
+    // has ~90% browser support
   },
   status: {
-    type: String,
+    type: String
     //default: true
-  },
-  weight: {
-    type: Number
   },
   contact: [{
     type: Schema.Types.ObjectId,
     ref: "User"
   }]
-
 });
 
-
 const Pets = mongoose.model("Pets", petsSchema)
-
 module.exports = Pets;
 
