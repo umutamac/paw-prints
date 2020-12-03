@@ -1,19 +1,16 @@
-  
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-//import Navbar from "./components/Navbar";
-//import Login2 from "./pages/Login";
-//import Signup from "./pages/Signup";
-
 import { Provider } from "react-redux";
- import store from "./store";
+import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
+
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -29,7 +26,7 @@ if (localStorage.jwtToken) {
   const decoded = jwt_decode(token);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
-// Check for expired token
+  // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
@@ -41,27 +38,28 @@ if (localStorage.jwtToken) {
 
 
 class App extends Component {
-  render(){
-  return (
-    <Provider store={store}>
-    <Router>
-      <div>
-        <Navbar />
-        
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/upload" component={UploadPost} />
-          
-        <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        </Switch>
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <div>
+            <Navbar />
 
-      </div>
-    </Router>
-  </Provider>
-  );
-}
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/upload" component={UploadPost} />
+
+            <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
+
+            <Footer />
+          </div>
+        </Router>
+      </Provider>
+    );
+  }
 }
 
 export default App;
