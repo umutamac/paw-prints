@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const db = require("../../models");
+//const db = require("../../models");
 const fs = require('fs') // bring in fs to delete file when finished
 const postController = require("../../controllers/postController");
 require('dotenv').config();
@@ -39,17 +39,18 @@ router.post("/imgup", upload.single('file'), function (req, res, next) {
   cloudinary.uploader.upload(req.file.path, { tags: 'express_sample' })
     .then(function (cloudRes) {
       console.log('** file uploaded to Cloudinary service');
-      console.dir(cloudRes);
+      console.dir(cloudRes); // log the response from cloudianry
 
       ////save the file path to temp folder and delete file
       console.log(req.file.path + "\n^^^^^^^^^^^^^^")
       fs.unlink(req.file.path, err => { if (err) { console.log(err) } })
 
-      // add url of the response from cloudianry into the text portion of form response
+      // add url of the cloudianry response from into the text portion of form response
       textResponse["imageURL"] = cloudRes.url
       console.log(textResponse)
-      let result = postController.create(textResponse) // create an entry to db with form response
-      // db.Pets.create(textResponse)
+
+      // create an entry to db with form response
+      let result = postController.create(textResponse) 
       res.json(result); // send this to front end
     })
 

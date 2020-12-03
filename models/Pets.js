@@ -10,6 +10,14 @@ const petsSchema = new Schema({
     type: String,
     trim: true
   },
+  petColor: {
+    type: String,
+    trim: true
+  },
+  petBreed: {
+    type: String,
+    trim: true
+  },
   phoneNum: { 
     type: String,
   },
@@ -17,13 +25,16 @@ const petsSchema = new Schema({
     type: String,
   },
   imageURL: {
-    required: true,
     type: String
   },
   date_lost: { 
     type: Date
     //doesn't have a corresponding input in form
     // has ~90% browser support
+  },
+  status: {
+    type: String
+    //default: true
   },
   contact: [{
     type: Schema.Types.ObjectId,
