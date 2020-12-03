@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const picRoutes = require("./pics");
+const picRoutes = require("./posts");
 
-router.use("/pics", picRoutes);
+router.use("/posts", picRoutes);
 
 module.exports = router;

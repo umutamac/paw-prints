@@ -3,11 +3,16 @@
 } */
 #title, footer{
     text-align: center;
+    font-family: 'Montserrat Subrayada', sans-serif;
 }
-.top-bar-center {
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+.navbar{
+  background-color: #1262BB;
+}
+h4 {
+  font-family: 'Nerko One', cursive
+}
+cell, p {
+  font-family: 'Kalam', cursive;
 }
 .menu-hover-lines {
     text-align: center;
@@ -69,7 +74,7 @@
 .hero-section {
     background: url("../asset/images/tealPrints.jpg") 50% no-repeat;
     background-size: cover;
-    height: 85vh;
+    height: 100%;
     text-align: center;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -85,6 +90,9 @@
   .hero-section .hero-section-text {
     color: #fefefe;
     text-shadow: 1px 1px 2px #0a0a0a;
+  }
+  .grid-container{
+    
   }
   .pagination-pointed .pagination-pointed-button, .pagination-pointed .current, .pagination-pointed .pagination-previous {
     position: relative;
@@ -164,3 +172,39 @@
     border-right: 17px solid #2c3840;
     transition: all 0.2s linear;
   }
+
+  .marketing-site-footer-bottom {
+    background: #1262bb;
+    padding: 1rem 0;
+    color: #8aa0ae;
+  }
+  
+  .marketing-site-footer-bottom p,
+  .marketing-site-footer-bottom .menu {
+    margin-bottom: 0;
+  }
+  
+  .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  
+  .marketing-site-footer-bottom .marketing-site-footer-bottom-links a {
+    color: #8aa0ae;
+  }
+  
+  @media screen and (max-width: 63.9375em) {
+    .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+  }
+  
+  @media screen and (max-width: 63.9375em) {
+    .marketing-site-footer-bottom {
+      text-align: center;
+    }
+  }
+  

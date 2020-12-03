@@ -10,7 +10,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 //import Signup from "./pages/Signup";
 
 import { Provider } from "react-redux";
-import store from "./store";
+// import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
@@ -18,6 +18,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import UploadPost from "./pages/UploadPost";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -27,12 +28,12 @@ if (localStorage.jwtToken) {
   // Decode token and get user info and exp
   const decoded = jwt_decode(token);
   // Set user and isAuthenticated
-  store.dispatch(setCurrentUser(decoded));
+  ////////store.dispatch(setCurrentUser(decoded));
 // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
-    store.dispatch(logoutUser());
+   //////////// store.dispatch(logoutUser());
     // Redirect to login
     window.location.href = "./login";
   }
@@ -42,7 +43,7 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render(){
   return (
-    <Provider store={store}>
+    //////////<Provider store={store}>
     <Router>
       <div>
         <Navbar />
@@ -50,6 +51,7 @@ class App extends Component {
         <Route exact path="/" component={Landing} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/upload" component={UploadPost} />
           
         <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
@@ -57,7 +59,7 @@ class App extends Component {
 
       </div>
     </Router>
-    </Provider>
+   ////////// </Provider>
   );
 }
 }

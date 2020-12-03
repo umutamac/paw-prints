@@ -33,7 +33,7 @@ function UploadPost() {
         formData.append("explanation",petExplanation)
         // POSSIBILITY: i could add the form id here so that I wouldnt have to do append for each input, need to test
 
-        axios.post('/api/pics/imgup', formData).then((response) => {
+        axios.post('/api/posts/imgup', formData).then((response) => {
             console.log(response)
             setRedirect(true) //once the form is submitted and a response comes back, redirect user to home page
         })

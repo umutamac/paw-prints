@@ -11,9 +11,10 @@ const upload = multer({ dest: 'uploads/' })
 ///import cloudinary and configure to your bucket access
 const cloudinary = require('cloudinary').v2;
 cloudinary.config({ // look at env for cloudinary config variables
-  cloud_name: process.env.CLOUDINARY_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  // cloud_name: process.env.CLOUD_NAME,
+  // api_key: process.env.CLOUD_API_KEY,
+  // api_secret: process.env.CLOUD_API_SECRET,
+  
 });
 
 router.route("/mypics")
@@ -31,7 +32,7 @@ router.route("/:id")
 router.post("/imgup", upload.single('file'), function (req, res, next) {
   // the req.body has the text inputs, and req.file has the image file
 
-  let textResponse = res.json(res.body) // save text portion of response in a variable
+  let textResponse = req.body // save text portion of response in a variable
   console.log(textResponse)
 
   //////use cloudinary uploader to send file to bucket and upload response
@@ -46,7 +47,10 @@ router.post("/imgup", upload.single('file'), function (req, res, next) {
 
       // add url of the response from cloudianry into the text portion of form response
       textResponse["imageURL"] = cloudRes.url
-      db.Pets.create(textResponse) // create an entry to db with form response
+      console.log(textResponse)
+      let result = postController.create(textResponse) // create an entry to db with form response
+      // db.Pets.create(textResponse)
+      res.json(result); // send this to front end
     })
 
 })
