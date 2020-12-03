@@ -7,10 +7,8 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
 
-
 const app = express();
-const PORT = process.env.PORT || 3001;
-
+const PORT = process.env.PORT || 3001; // backend server runs from this port
 
 
 // Define Bodyparser middleware here
@@ -37,12 +35,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
 //checking connections
 //app.get('/', (req, res) => {
 // res.send('Project 3')
 //})
-
 
 // Passport middleware
 app.use(passport.initialize());
@@ -51,13 +47,10 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Routes
+//app.use(routes)
 app.use("/api/users", users);
 app.use("/api/posts", posts);
-//app.use(routes)
 
-
-// Add routes, both API and view
-//app.use(routes);
 
 // Connect to the Mongo DB
 //mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pawprint");
