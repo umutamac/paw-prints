@@ -17,7 +17,7 @@ cloudinary.config({ // look at env for cloudinary config variables
   
 });
 
-router.route("/mypics")
+router.route("/allposts")
   .get(postController.findAll)
   .post(postController.create);
 
