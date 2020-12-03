@@ -27,7 +27,7 @@ const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB - new
 mongoose
-  .connect(db,{useNewUrlParser: true })
+  .connect(db,{useNewUrlParser: true, useCreateIndex: true})
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
@@ -61,6 +61,7 @@ app.use("/api/posts", posts);
 
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pawprint");
+
 
 // Start the API server
 app.listen(PORT, function() {
