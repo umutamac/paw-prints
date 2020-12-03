@@ -8,7 +8,8 @@ function UploadPost() {
     const [petName, setpetName] = useState("");
     const [img, setimg] = useState("");
     const [petType, setpetType] = useState("");
-    const [petExplanation, setpetExplanation] = useState("");
+    const [phone, setPhone] = useState("");
+    const [details, setDetails] = useState("");
 
     const handleInp = (event) => { // store each input value in a state using the same function
         let name = event.target.name
@@ -16,7 +17,8 @@ function UploadPost() {
 
         if (name === "petName") { setpetName(value) }
         else if (name === "petType") { setpetType(value) }
-        else if (name === "petExplanation") { setpetExplanation(value) }
+        else if (name === "phoneNum") { setPhone(value) }
+        else if (name === "details") { setDetails(value) }
     }
 
     const handleFile = (event) => { // store the input value in a state
@@ -27,10 +29,11 @@ function UploadPost() {
         event.preventDefault()
 
         var formData = new FormData();         //need to append all the values from the form in here using states
-        formData.append("file",img)
-        formData.append("name",petName)
-        formData.append("pettype",petType)
-        formData.append("explanation",petExplanation)
+        formData.append("file", img)
+        formData.append("name", petName)
+        formData.append("petType", petType)
+        formData.append("phoneNum", phone)
+        formData.append("details", details)
         // POSSIBILITY: i could add the form id here so that I wouldnt have to do append for each input, need to test
 
         axios.post('/api/posts/imgup', formData).then((response) => {
@@ -47,11 +50,12 @@ function UploadPost() {
                     <h1>Create a post</h1>
                     <p>You will need to upload a picture of your pet</p>
                     <input id="petName" type='text' name="petName" placeholder="Pet Name" encType="multipart/form-data" value={petName} onChange={handleInp} />
-                    <input id="petImg" type='file' name="file" accept="image/*" encType="multipart/form-data" onChange={handleFile} />
-                    <input id="petType" type='text' name="petType" placeholder="Type of Animal" encType="multipart/form-data" value={petType} onChange={handleInp} />
-                    <textarea id="petExplanation" type='text' name="petExplanation" value={petExplanation} onChange={handleInp}
-                        encType="multipart/form-data" placeholder="What does the pet look like, when was it last seen?" />
+                    <input id="petType" type='text' name="petType" placeholder="Animal type (cat, dog, bird, etc.)" encType="multipart/form-data" value={petType} onChange={handleInp} />
 
+                    <input id="phoneNum" type='text' name="phoneNum" placeholder="Callback number" encType="multipart/form-data" value={phone} onChange={handleInp} required />
+                    <textarea id="details" type='text' name="details" value={details} onChange={handleInp}
+                        encType="multipart/form-data" placeholder="What does the pet look like, when and where was it last seen?" required />
+                    <input id="petImg" type='file' name="file" accept="image/*" encType="multipart/form-data" onChange={handleFile} required />
                     <button id="uploadBtn" type='submit'>Upload</button>
                 </form>
             </div>

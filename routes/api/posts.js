@@ -11,9 +11,9 @@ const upload = multer({ dest: 'uploads/' })
 ///import cloudinary and configure to your bucket access
 const cloudinary = require('cloudinary').v2;
 cloudinary.config({ // look at env for cloudinary config variables
-  // cloud_name: process.env.CLOUD_NAME,
-  // api_key: process.env.CLOUD_API_KEY,
-  // api_secret: process.env.CLOUD_API_SECRET,
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
   
 });
 
