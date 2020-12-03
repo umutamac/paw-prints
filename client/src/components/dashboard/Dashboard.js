@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 
 
 class Dashboard extends Component {
-  
+
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
   };
 
-render() {
+  render() {
     const { user } = this.props.auth;
-return (
-      
+    return (
+
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
@@ -25,7 +25,7 @@ return (
                 You are logged into a full-stack{" "}
                 <span style={{ fontFamily: "monospace" }}>PAW PRINT</span> app 👏
               </p>
-         <Link to="/upload">upload</Link>
+              <Link to="/upload">upload</Link>
 
 
 
@@ -51,4 +51,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect( mapStateToProps, { logoutUser } )(Dashboard);
+export default connect(mapStateToProps, { logoutUser })(Dashboard);
