@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./footer.css";
 
 
-class Navbar extends Component {
+class Footer extends Component {
   render() {
     return (
         <div className="marketing-site-footer-bottom">
@@ -25,4 +25,4 @@ class Navbar extends Component {
     );
   }
 }
-export default Navbar;
+export default Footer;
