@@ -14,6 +14,7 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props.auth;
+    
     return (
 
       <div style={{ height: "75vh" }} className="container valign-wrapper">
@@ -27,7 +28,7 @@ class Dashboard extends Component {
               </p>
               <Link to="/upload">upload</Link>
 
-
+             
 
             </h4>
             <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}
