@@ -10,7 +10,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 //import Signup from "./pages/Signup";
 
 import { Provider } from "react-redux";
-// import store from "./store";
+ import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
@@ -28,12 +28,12 @@ if (localStorage.jwtToken) {
   // Decode token and get user info and exp
   const decoded = jwt_decode(token);
   // Set user and isAuthenticated
-  ////////store.dispatch(setCurrentUser(decoded));
+  store.dispatch(setCurrentUser(decoded));
 // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
-   //////////// store.dispatch(logoutUser());
+    store.dispatch(logoutUser());
     // Redirect to login
     window.location.href = "./login";
   }
@@ -43,7 +43,7 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render(){
   return (
-    //////////<Provider store={store}>
+    <Provider store={store}>
     <Router>
       <div>
         <Navbar />
@@ -59,12 +59,9 @@ class App extends Component {
 
       </div>
     </Router>
-   ////////// </Provider>
+  </Provider>
   );
 }
 }
 
 export default App;
-
-//<Route exact path="/" component={Login2} />  
-//<Route exact path="/signup" component={Signup} />
