@@ -8,8 +8,20 @@
 .navbar{
   background-color: #1262BB;
 }
+label{
+  font-family: 'Nerko One', cursive;
+  font-size: large;
+}
+h3 {
+  font-family: 'Nerko One', cursive
+}
 h4 {
   font-family: 'Nerko One', cursive
+}
+button{
+  border-color: #0077ea;
+  border-style: groove;
+
 }
 cell, p {
   font-family: 'Kalam', cursive;
