@@ -60,7 +60,7 @@ app.use("/api/posts", posts);
 //app.use(routes);
 
 // Connect to the Mongo DB
-//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pawprint");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pawprint");
 
 // Start the API server
 app.listen(PORT, function() {
