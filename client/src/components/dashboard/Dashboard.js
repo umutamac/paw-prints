@@ -25,6 +25,7 @@ return (
                 You are logged into a full-stack{" "}
                 <span style={{ fontFamily: "monospace" }}>PAW PRINT</span> app 👏
               </p>
+         
          <Link to="/upload">upload</Link>
 
 
