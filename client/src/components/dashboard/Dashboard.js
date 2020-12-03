@@ -21,7 +21,7 @@ return (
               <b>Hey there,</b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
                 You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
+                <span style={{ fontFamily: "monospace" }}>PAW PRINT</span> app 👏
               </p>
             </h4>
             <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}
