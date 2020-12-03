@@ -1,10 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+//const routes = require("./routes");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 
 const users = require("./routes/api/users");
+const posts = require("./routes/api/posts");
 
 
 const app = express();
@@ -51,7 +52,8 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
-app.use(routes)
+app.use("/api/posts", posts);
+//app.use(routes)
 
 
 // Add routes, both API and view

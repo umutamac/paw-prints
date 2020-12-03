@@ -9,56 +9,47 @@ mongoose.connect(
 
 const petsSeed = [
   {
-    name: "Rocky",
+    petname: "Rocky",
+    petType: "Cat",
+    petColor: "White and black",
+    petBreed: "maine coon",
+    phoneNum: "8148628666",
+    details: "This is important details about my lost cat",
     imageURL: "https://res.cloudinary.com/umutcloud/image/upload/v1606763726/paw-prints/masked_cat.jpg",
-    pettype: "cat",
-    age: 2,
-    breed: "Siamese",
-    genre: "Female",
-    color: "white and black",
-    date_lost: "11/22/2020",
-    location: "north Austin",
-    status: "true",
-    weight: 2,
-    contact: 1
-
-  },
-  {
-    name: "Lukas",
-    imageURL: "https://res.cloudinary.com/umutcloud/image/upload/v1606763800/paw-prints/brian_griffin.jpg",
-    pettype: "dog",
-    age: 1,
-    breed: "lab",
-    genre: "Male",
-    color: "brown",
     date_lost: "11/23/2020",
-    location: "street blue",
     status: "true",
-    weight: 150,
-    contact: 2
-
+    contact: 1
   },
   {
-    name: "Mimi",
-    pettype: "dog",
-    age: 5,
-    breed: "",
-    genre: "Female",
-    color: "yellow",
-    image: "",
-    date_lost: "11/25/2020",
-    location: "south",
+    petname: "Lukas",
+    petType: "Dog",
+    petColor: "Brown",
+    petBreed: "Labrador",
+    phoneNum: "8148628666",
+    details: "This is important details about my lost cat",
+    imageURL: "https://res.cloudinary.com/umutcloud/image/upload/v1606763800/paw-prints/brian_griffin.jpg",
+    date_lost: "11/23/2020",
     status: "true",
-    weight: 25,
+    contact: 2
+  },
+  {
+    petname: "Mimi",
+    petType: "dog",
+    petColor: "yellow",
+    petBreed: "Chihuahua",
+    phoneNum: "8148628666",
+    details: "This is important details about my lost cat",
+    imageURL: "https://res.cloudinary.com/umutcloud/image/upload/v1606763800/paw-prints/brian_griffin.jpg",
+    date_lost: "11/25/2020",
+    status: "true",
     contact: 3
-
   }
 ];
 
 const UserSeed = [
   {
     name: "Mario",
-    password: "123",
+    password: "abcdef",
     phonenumber: "512-532-9561",
     email: "mario@gmail.com",
     city: "Austin",
@@ -67,7 +58,7 @@ const UserSeed = [
   },
   {
     name: "Carlos",
-    password: "1235",
+    password: "password123",
     phonenumber: "512-895-2564",
     email: "carlos@gmail.com",
     city: "Austin",
@@ -76,7 +67,7 @@ const UserSeed = [
   },
   {
     name: "Eric",
-    password: "45462",
+    password: "asdfgh",
     phonenumber: "512-598-4455",
     email: "eric@gmail.com",
     city: "Round Rock",
