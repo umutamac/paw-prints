@@ -9,9 +9,9 @@ function AllPosts() {
         axios.get('/api/posts/allposts')
             .then((dbresponse) => {
                 setAllPetData(dbresponse.data)
-                console.log(allPetData);
+                //console.log(allPetData);
             })
-    })
+    },[]) // empty array at the end to stop page from infinitely reloading
 
     return (
         <div className="hero-section content">

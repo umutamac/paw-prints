@@ -7,6 +7,7 @@ require('dotenv').config();
 //import multer and create a folder "uploads" to hold on to temp files
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
+const CircularJSON = require('circular-json');
 
 ///import cloudinary and configure to your bucket access
 const cloudinary = require('cloudinary').v2;
@@ -18,17 +19,17 @@ cloudinary.config({ // look at env for cloudinary config variables
 
 router.route("/allposts")
   .get(postController.findAll)
-  .post(postController.create);
+  //.post(postController.create);
 
 router.route("/:id")
   .get(postController.findById)
-  .delete(postController.remove);
+// .delete(postController.remove);  replaced by a function below
 // .put(postController.update)
 
 
 ///// When the form is submitted and /imgup is hit:
 // use multer upload method to organize file data to readable format
-router.post("/imgup", upload.single('file'), function (req, res, next) {
+router.post("/imgup", upload.single('file'), function (req, res) {
   // the req.body has the text inputs, and req.file has the image file
 
   let textResponse = req.body // save text portion of response in a variable
@@ -55,13 +56,21 @@ router.post("/imgup", upload.single('file'), function (req, res, next) {
     })
 })
 
-router.delete("/:id", function (req, res, next) {
+router.delete("/:id", function (req, res) {
+  let postToRemove = postController.findById; // find the post
 
-  //////use cloudinary uploader to send file to bucket and upload response
-  cloudinary.uploader.destroy("imgPublicID", (result) => (
-    console.log(result)
-  )).then(function () {
-      postController.remove("id")
+  console.log("res" + CircularJSON.stringify(res))
+  console.log(postToRemove)
+  let imgToRemove = postToRemove.imgPublicID // extract imgPublicID
+  console.log("imgPublicID to be removed: " + imgToRemove);
+  
+  cloudinary.uploader.destroy(imgToRemove, (result) => { // use imgPublicID to delete pic in Cloud
+    console.log("Image deleted from Cloudinary");
+    console.log(result); 
+
+  }).then(function () {
+      let deleteResult = postController.remove(); // delete the post from our db
+      res.json(deleteResult);
   })
 })
 
