@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import "../layout/footer.css";
 
 
 class Register extends Component {
@@ -55,6 +56,7 @@ console.log(newUser);
 render() {
     const { errors } = this.state;
 return (
+      <div className="hero-section">
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
@@ -146,6 +148,7 @@ return (
             </form>
           </div>
         </div>
+      </div>
       </div>
     );
   }
