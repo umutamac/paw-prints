@@ -28,13 +28,7 @@ class Dashboard extends Component {
                 You are logged into a full-stack{" "}
                 <span style={{ fontFamily: "monospace" }}>PAW PRINT</span> app 👏
               </p>
-<<<<<<< HEAD
-              <Link to="/upload">upload</Link>
-
-             
-=======
               <Link to="/upload">Create a post</Link>
->>>>>>> 2e72c672a95ef3500d86ce1ec2ab57d7c49c8c16
 
             </h4>
             <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}

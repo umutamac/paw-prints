@@ -13,10 +13,6 @@
     "cloudinary": "^1.23.0",
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
-<<<<<<< HEAD
-    "foundation": "^4.2.1-1",
-=======
->>>>>>> 2e72c672a95ef3500d86ce1ec2ab57d7c49c8c16
     "foundation-sites": "^6.6.3",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
