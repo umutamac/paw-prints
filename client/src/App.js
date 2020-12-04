@@ -55,7 +55,7 @@ class App extends Component {
               <PrivateRoute exact path="/upload" component={UploadPost} />
 
               <PrivateRoute exact path="/show" component={GetAllPosts} />
-              {/*You cant access this page from buttons in other pages, but adding /show to url will let you in here
+              {/*You cannot access this page from buttons in other pages, but adding /show to url will let you in here
                I'll leave it here for debugging etc.*/}
             </Switch>
 

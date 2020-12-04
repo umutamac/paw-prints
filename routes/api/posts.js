@@ -32,7 +32,7 @@ router.post("/imgup", upload.single('file'), function (req, res, next) {
   // the req.body has the text inputs, and req.file has the image file
 
   let textResponse = req.body // save text portion of response in a variable
-  console.log(textResponse)
+  // console.log(textResponse)
 
   //////use cloudinary uploader to send file to bucket and upload response
   cloudinary.uploader.upload(req.file.path, { tags: 'express_sample' })
@@ -61,9 +61,8 @@ router.delete("/:id", function (req, res, next) {
   cloudinary.uploader.destroy("imgPublicID", (result) => (
     console.log(result)
   )).then(function () {
-      
+      postController.remove("id")
   })
-
 })
 
 module.exports = router;
