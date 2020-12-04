@@ -6,9 +6,9 @@ import "./footer.css"
 class Navbar extends Component {
   render() {
     return (
-      <div id="navbar" className="navbar-fixed">
+      <div id="navbar" className="navbar">
         <nav className="z-depth-0">
-            <div className="top-bar topbar-sticky-shrink nav-wrapper">
+            <div className="top-bar nav-wrapper">
                 <div className="top-bar-title">
                     <img className="image" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
                         alt="paw prints" />

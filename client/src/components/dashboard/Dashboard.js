@@ -18,34 +18,37 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     return (
       <div className="hero-section">
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+        <div style={{ height: "75vh" }} className="container valign-wrapper">
 
-        <div className="row">
-          <div className="col s12 center-align">
-            <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-                You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}>PAW PRINT</span> app 👏
-              </p>
-              <Link to="/upload">Create a post</Link>
+          <div className="grid-x grid-padding-x">
+            <div className="medium-12 s12 cell center-align">
+              <h4>
+                <b>Hey there,</b> {user.name.split(" ")[0]}
+                <p className="flow-text grey-text text-darken-1">
+                  You are logged into a full-stack{" "}
+                  <span style={{ fontFamily: "monospace" }}>PAW PRINT</span> app 👏
+                </p>
+                <Link to="/upload">Create a post</Link>
 
-            </h4>
-            <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3" >
-              Logout
-            </button>
+              </h4>
+              <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}
+                onClick={this.onLogoutClick}
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3" >
+                Logout
+              </button>
+              <div className="medium-12">
+                <GetAllPosts />
+              </div>
+            </div>
+
           </div>
-        </div>
 
-        <GetAllPosts /> 
-        {/* 
+          {/* 
         The home page for loggen in people will include this page.
         After creating a post, people will be redirected here
          */}
-        
-      </div>
+
+        </div>
       </div>
     );
   }
