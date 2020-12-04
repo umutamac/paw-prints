@@ -37,8 +37,9 @@ class Landing extends Component {
             </div>
           </div>
         </div>
-
+        <div>
         <GetAllPosts /> {/* Landing Page will include all posts for everyone to see*/}
+        </div>
       </div>
     );
   }

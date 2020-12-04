@@ -66,6 +66,8 @@ render() {
               home
             </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <h1 id="title">Paw Prints</h1>
+            <h3 className="subTitle">Helping You Find Your Lost Companion</h3>
               <h4>
                 <b>Login</b> below
               </h4>
@@ -81,7 +83,7 @@ render() {
                   error={errors.email}
                   id="email"
                   type="email"
-                  className={classnames("", {invalid: errors.email || errors.emailnotfound})}
+                  className={classnames("input radius cell", {invalid: errors.email || errors.emailnotfound})}
                 />
                 <label htmlFor="email">Email</label>
                 <span className="red-text">
