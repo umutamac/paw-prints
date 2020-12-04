@@ -42,17 +42,17 @@ function UploadPost() {
         formData.append("phoneNum", phone)
         formData.append("details", details)
         formData.append("file", img)
-        // POSSIBILITY: i could add the form id here so that I wouldnt have to do append for each input, need to test
+        // NON-URGENT POSSIBILITY: i could add the form id into FormData() so that I wouldnt have to do append for each input, need to test
 
         axios.post('/api/posts/imgup', formData).then((response) => {
             console.log(response)
-            setRedirect(true) //once the form is submitted and a response comes back, redirect user to home page
+            setRedirect(true) //once the form is submitted and a response comes back, redirect user to dashboard
         })
     }
     return (
         <div className="hero-section">
         <div>
-            {redirect ? <Redirect push to='/show' /> : <div id="redirect"></div> /*redirect user or add empty div (basically do nothing)*/}
+            {redirect ? <Redirect push to='/dashboard' /> : <div id="redirect"></div> /*redirect user or add empty div (basically do nothing)*/}
 
             <div id="UploadPostContainer" >
                 <form id="postForm" onSubmit={uploadform}>

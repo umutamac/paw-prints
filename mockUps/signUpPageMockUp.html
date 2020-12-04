@@ -5,16 +5,18 @@
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-
     <!-- Compressed JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paw Prints</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kalam&family=Montserrat+Subrayada&family=Nerko+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="landingPage.css">
     <link rel="stylesheet" href="navBar.css">
+    <title>Paw Prints</title>
 </head>
 
 <body>
@@ -22,63 +24,95 @@
         <div>
             <div class="top-bar topbar-sticky-shrink">
                 <div class="top-bar-title">
-                    <img style="height:50px" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png" alt="paw prints" />
+                    <img style="height:50px" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                        alt="paw prints" />
                 </div>
                 <div class="top-bar-right">
-                    <ul class="menu">
+                    <ul class="menu menu-hover-lines">
                         <li><a href="./logInPageMockUp.html">Sign In</a></li>
                         <li><a href="./landingPageMockUp.html">Home</a></li>
+                        <li><img style="height:50px"
+                                src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                                alt="paw prints" /></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <header class="content">
-        <div>
-            <h1 style="text-align: center;">
-                Paw Prints
-            </h1>
+    <div class="hero-section">
+        <div class=content>
+            <h1 id="title">Paw Prints</h1>
+            <h3>Helping You Find Your Lost Companion</h3>
+            <form>
+                <div class="grid-container">
+                    <div class="grid-x grid-padding-x">
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-6 cell">
+                            <label>Email
+                                <input class="input radius" type="text" placeholder="Email">
+                            </label>
+                        </div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-6 cell">
+                            <label>Password
+                                <input class="input radius" type="text" placeholder="Password">
+                            </label>
+                        </div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-6 cell">
+                            <label>Phone Number
+                                <input class="input radius" type="text" placeholder="Phone Number">
+                            </label>
+                        </div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-6 cell">
+                            <label>City
+                                <input class="input radius" type="text" placeholder="City">
+                            </label>
+                        </div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-6 cell">
+                            <label>State
+                                <input class="input radius" type="text" placeholder="State">
+                            </label>
+                        </div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-3 cell"></div>
+                        <div class="medium-6 cell">
+                        <button type="button" class="radius success button large" id="signUpButton">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-
-    </header>
-    <div>
-        <form>
-            <div class="grid-container">
-                <div class="grid-x grid-padding-x">
-                    <div class="medium-7 cell">
-                        <label>Email
-                            <input type="text" placeholder="Email">
-                        </label>
+        </div>
+        <footer>
+            <div class="marketing-site-footer-bottom">
+                <div class="row large-unstack align-middle">
+                    <div class="column">
+                        <img style="height:50px" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                            alt="paw prints" />
+                        &copy; 2020 Group 3
+                        <img style="height:50px" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                            alt="paw prints" />
                     </div>
-                    <div class="medium-7 cell">
-                        <label>Password
-                            <input type="text" placeholder="Password">
-                        </label>
-                    </div>
-                    <div class="medium-7 cell">
-                        <label>Phone Number
-                            <input type="text" placeholder="Phone Number">
-                        </label>
-                    </div>
-                    <div class="medium-7 cell">
-                        <label>City
-                            <input type="text" placeholder="City">
-                        </label>
-                    </div>
-                    <div class="medium-7 cell">
-                        <label>State
-                            <input type="text" placeholder="State">
-                        </label>
-                    </div>
-                    <button style="border: 2px solid black" id="signUpButton">Sign Up</button>
+                    <!-- <div class="column">
+                <ul class="menu marketing-site-footer-bottom-links">
+                  <li><a href="#">Home</a></li>
+                </ul>
+              </div> -->
                 </div>
             </div>
-        </form>
-    </div>
-    <footer>
-        &copy; 2020 Group 3
-    </footer>
-    <script src="./navBar.js"></script>
+        </footer>
+        <!-- jQuery must be imported before Foundation -->
+        <script src="js/jquery.min.js"></script>
+        <!-- this will include every plugin and utility required by Foundation -->
+        <script src="js/foundation.min.js"></script>
+        <!-- <script src="./navBar.js"></script> -->
 </body>
 
 </html>

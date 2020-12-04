@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-import { Provider } from "react-redux";
 import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
@@ -49,11 +49,14 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/upload" component={UploadPost} />
-            <Route exact path="/show" component={GetAllPosts} /> {/*Temporarily here, this will get added to another page*/}
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/upload" component={UploadPost} />
+
+              <PrivateRoute exact path="/show" component={GetAllPosts} />
+              {/*You cant access this page from buttons in other pages, but adding /show to url will let you in here
+               I'll leave it here for debugging etc.*/}
             </Switch>
 
             <Footer />
