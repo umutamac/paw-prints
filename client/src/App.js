@@ -10,6 +10,7 @@ import store from "./store";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
+import GetAllPosts from "./components/layout/GetAllPosts";
 
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -49,6 +50,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/upload" component={UploadPost} />
+            <Route exact path="/show" component={GetAllPosts} /> {/*Temporarily here, this will get added to another page*/}
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
