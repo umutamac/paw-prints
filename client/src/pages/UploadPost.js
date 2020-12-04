@@ -50,6 +50,7 @@ function UploadPost() {
         })
     }
     return (
+        <div className="hero-section">
         <div>
             {redirect ? <Redirect push to='/show' /> : <div id="redirect"></div> /*redirect user or add empty div (basically do nothing)*/}
 
@@ -70,6 +71,7 @@ function UploadPost() {
                     <button id="uploadBtn" type='submit'>Upload</button>
                 </form>
             </div>
+        </div>
         </div>
     );
 }

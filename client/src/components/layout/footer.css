@@ -7,12 +7,12 @@ img{
 .image{
   height: 50px;
 }
-#title, footer{
+#title, footer, .marketing-site-footer-bottom{
     text-align: center;
     font-family: 'Montserrat Subrayada', sans-serif;
 }
 
-.navbar{
+#navbar{
   background-color: #1262BB;
 }
  
@@ -81,7 +81,7 @@ cell, p {
   
   
 .hero-section, #this {
-    background-image: url("tealPrints.jpg") 50% no-repeat;
+    background: url("./tealPrints.jpg") 50% no-repeat;
     background-size: cover;
     height: 100%;
     text-align: center;
