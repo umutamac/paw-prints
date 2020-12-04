@@ -51,7 +51,7 @@ function UploadPost() {
     }
     return (
         <div>
-            {redirect ? <Redirect push to='/home' /> : <div id="redirect"></div> /*redirect user or add empty div (basically do nothing)*/}
+            {redirect ? <Redirect push to='/show' /> : <div id="redirect"></div> /*redirect user or add empty div (basically do nothing)*/}
 
             <div id="UploadPostContainer" >
                 <form id="postForm" onSubmit={uploadform}>
