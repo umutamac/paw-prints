@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
+import "../layout/footer.css"
 
 //import GetAllPosts from "../layout/GetAllPosts";
 
