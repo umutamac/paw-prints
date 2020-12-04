@@ -4,7 +4,7 @@ import store from "../../store";
 
 function Cell(animals) {
     function deleteFunction(id) {
-        axios.delete("/api/post/" + id)
+        axios.delete("/api/posts/" + id)
             .then(() => (console.log("post deleted")))
             .catch(err => (console.log(err)))
     }
