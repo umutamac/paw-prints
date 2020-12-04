@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
 import "../layout/footer.css"
 
-//import GetAllPosts from "../layout/GetAllPosts";
+import GetAllPosts from "../layout/GetAllPosts";
 
 class Dashboard extends Component {
 
@@ -19,7 +19,6 @@ class Dashboard extends Component {
     return (
       <div style={{ height: "75vh" }} className="container valign-wrapper">
 
-
         <div className="row">
           <div className="col s12 center-align">
             <h4>
@@ -28,9 +27,7 @@ class Dashboard extends Component {
                 You are logged into a full-stack{" "}
                 <span style={{ fontFamily: "monospace" }}>PAW PRINT</span> app 👏
               </p>
-              <Link to="/upload">upload</Link>
-
-
+              <Link to="/upload">Create a post</Link>
 
             </h4>
             <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}
@@ -41,7 +38,11 @@ class Dashboard extends Component {
           </div>
         </div>
 
-
+        <GetAllPosts /> 
+        {/* 
+        The home page for loggen in people will include this page.
+        After creating a post, people will be redirected here
+         */}
         
       </div>
     );
