@@ -30,6 +30,9 @@ const petsSchema = new Schema({
   imgPublicID: {
     type: String
   },
+  author: {
+    type: String
+  },
   date_lost: { 
     type: Date
     //doesn't have a corresponding input in form

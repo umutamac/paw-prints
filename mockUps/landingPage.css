@@ -1,7 +1,11 @@
 /* body{
     background-image: linear-gradient(pink,blue);
 } */
-#title, footer{
+#title {
+  text-align: center;
+  font-family: 'Bungee Shade', cursive;
+}  
+footer{
     text-align: center;
     font-family: 'Montserrat Subrayada', sans-serif;
 }
@@ -12,15 +16,18 @@ label{
   font-family: 'Nerko One', cursive;
   font-size: x-large;
 }
-h3 {
+h3, h4 {
+  text-align: center;
   font-family: 'Nerko One', cursive
 }
-h4 {
-  font-family: 'Nerko One', cursive
+.post.radius{
+  border-radius: 50px;
+  border-color: #0077ea;
+  border-width: 5px;
 }
 .input.radius{
-  border-radius: 5000px;
-  border-color: #0a0a0a;
+  border-radius: 40px;
+  border-color: #0077ea;
   border-width: 5px;
 }
 .button.radius{
