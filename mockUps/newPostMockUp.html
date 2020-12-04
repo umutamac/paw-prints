@@ -5,20 +5,21 @@
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-
     <!-- Compressed JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paw Prints</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Kalam&family=Montserrat+Subrayada&family=Nerko+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="landingPage.css">
     <link rel="stylesheet" href="navBar.css">
+    <title>Paw Prints</title>
 </head>
 
 <body>
-    <!-- nav bar -->
     <div id="navbar">
         <div>
             <div class="top-bar topbar-sticky-shrink">
@@ -27,55 +28,82 @@
                         alt="paw prints" />
                 </div>
                 <div class="top-bar-right">
-                    <ul class="menu">
+                    <ul class="menu menu-hover-lines">
+                        <li><img style="height:50px"
+                            src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                            alt="paw prints" /></li>
                         <li><a href="./landingPageMockUp.html">Sign Out</a></li>
                         <li><a href="./homePageMockUp.html">Home</a></li>
+                        <!-- <li><img style="height:50px"
+                                src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                                alt="paw prints" /></li> -->
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <header class="content">
-        <h1 id="title">Paw Prints</h1>
-    </header>
-    <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-            <div class="medium-3 cell"></div>
-            <div class="medium-6 cell">
-                <h4>find your lost pets here</h4>
+    <div class="hero-section">
+        <div class=content>
+            <h1 id="title">PawPrints</h1>
+            <h3>Helping You Find Your Lost Companion</h3>
+            <hr>
+            <h4>Add Your Pet's Information Below...</h4>
+            <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-12 cell" style="padding:2px;border:1px solid black">
-                        <form>
-                            <label>
-                                select image
-                                <input type="text">
-                                <button style="border:1px solid black">
-                                    Click to Select Image
-                                </button>
-                            </label>
-                        </form>
-                    </div>
-                    <div class="medium-12 cell" style="padding:2px;border:1px solid black">
-                        <form>
-                            <label>
-                                add description and contact info
-                                <textarea placeholder="add description and contact info" rows="5"></textarea>
-                            </label>
-                        </form>
-                    </div>
-                    <div class="medium-12 cell" style="padding:2px;border:1px solid black">
-                        <button style="border:1px solid black">
-                            click to submit
-                        </button>
+                    <div class="medium-2 cell"></div>
+                    <div class="medium-8 cell">
+                        <div class="grid-x grid-padding-x">
+                            <div class="medium-12 cell card post radius">
+                                <form>
+                                    <label>
+                                        Select Image
+                                        <input class="input radius" type="text" placeholder="Image Goes Here">
+                                        <button type="button" class="radius success button large">
+                                            Click To Select Image
+                                        </button>
+                                    </label>
+                                </form>
+                            </div>
+                            <div class="medium-12 cell card post radius">
+                                <form>
+                                    <label>
+                                        Add A Description And Contact Info
+                                        <textarea class="input radius" placeholder="Add A Description And Contact Info" rows="5"></textarea>
+                                    </label>
+                                    <button type="button" class="radius success button large">
+                                        Click To Submit
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <footer>
-        &copy; 2020 Group 3
+        <div class="marketing-site-footer-bottom">
+            <div class="row large-unstack align-middle">
+                <div class="column">
+                    <img style="height:50px" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                        alt="paw prints" />
+                    &copy; PawPrints 2020 Group 3
+                    <img style="height:50px" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                        alt="paw prints" />
+                </div>
+                <!-- <div class="column">
+            <ul class="menu marketing-site-footer-bottom-links">
+              <li><a href="#">Home</a></li>
+            </ul>
+          </div> -->
+            </div>
+        </div>
     </footer>
-    <script src="./navBar.js"></script>
+    <!-- jQuery must be imported before Foundation -->
+    <script src="js/jquery.min.js"></script>
+    <!-- this will include every plugin and utility required by Foundation -->
+    <script src="js/foundation.min.js"></script>
+    <!-- <script src="./navBar.js"></script> -->
 </body>
 
 </html>

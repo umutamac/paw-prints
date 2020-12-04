@@ -1,7 +1,8 @@
 import React from "react";
+// import { Link } from "react-router-dom";
 import axios from "axios";
-//import store from "../../store";
 import { connect } from "react-redux";
+import "./footer.css"
 
 function Cell(props) {
     function deleteFunction(id) {

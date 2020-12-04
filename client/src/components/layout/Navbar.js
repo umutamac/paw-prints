@@ -6,36 +6,36 @@ import "./footer.css"
 class Navbar extends Component {
   render() {
     return (
-      <div id="navbar" className="navbar-fixed">
+      <div id="navbar" className="navbar">
         <nav className="z-depth-0">
-            <div className="top-bar topbar-sticky-shrink nav-wrapper">
-                <div className="top-bar-title">
-                    <img className="image" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
-                        alt="paw prints" />
-                </div>
-                <div className="top-bar-right">
-                    <ul className="menu menu-hover-lines">
-                        <li><img
-                                className="image"
-                                src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
-                                alt="paw prints" /></li>
-                        <li><Link to="/register">
-                          <a href="#">Sign Up</a>
-                            </Link>
-                        </li>
-                        <li><Link to="/login">
-                          <a href="#">Sign In</a>
-                            </Link>
-                        </li>
-                        <li><img
-                                className="image"
-                                src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
-                                alt="paw prints" /></li>
-                    </ul>
-                </div>
+          <div className="top-bar nav-wrapper">
+            <div className="top-bar-title">
+              <img className="image" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                alt="paw prints" />
             </div>
+            <div className="top-bar-right">
+              <ul className="menu menu-hover-lines">
+                <li><img
+                  className="image"
+                  src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                  alt="paw prints" /></li>
+                <li><Link to="/register">
+                  <a href="#">Sign Up</a>
+                </Link>
+                </li>
+                <li><Link to="/login">
+                  <a href="#">Sign In</a>
+                </Link>
+                </li>
+                <li><img
+                  className="image"
+                  src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                  alt="paw prints" /></li>
+              </ul>
+            </div>
+          </div>
         </nav>
-    </div>
+      </div>
       // <div className="navbar-fixed">
       //   <nav className="z-depth-0">
       //     <div className="nav-wrapper white">
@@ -45,7 +45,7 @@ class Navbar extends Component {
       //         PAW-PRINTS
       //       </Link>
 
-            
+
       //     </div>
       //   </nav>
       // </div>
@@ -53,7 +53,7 @@ class Navbar extends Component {
   }
 }
 export default Navbar;
-{/*
+/*
             <div>
         <h1>Navbar Paw - Prints</h1>
         <Link to="/" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"} >
@@ -67,5 +67,5 @@ export default Navbar;
         </Link>
 
       </div>
-            
-            */}
+
+            */
