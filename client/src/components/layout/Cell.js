@@ -5,12 +5,14 @@ import React from "react";
 function Cell(animals) {
 
     return (
-        <div className="cell">
+        <div className="cell" id={animals.id}>
             <div className="card">
-                <img alt="animal" src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2019/07/15092404/do-dogs-grieve-other-dogs.jpg" />
+                <img alt="animal_picture" src={animals.imageURL} />
                 <div className="card-section">
-                    <h4>This is Sheila.</h4>
-                    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                    <h4>{animals.petType}</h4>
+                    <p>{animals.petName}, {animals.petBreed}, {animals.petColor}</p>
+                    <p>{animals.details}</p>
+                    <p>Please all {animals.phoneNum} if seen</p>
                 </div>
             </div>
         </div>
