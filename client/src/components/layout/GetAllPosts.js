@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-// import from "react-router-dom";
 import axios from "axios";
 import Cell from "./Cell";
 
 function AllPosts() {
-    // let allPetData;
     let [allPetData, setAllPetData] = useState([]);
 
     useEffect(() => {
@@ -26,14 +24,12 @@ function AllPosts() {
                         <div className="grid-container">
                             <div className="grid-x grid-margin-x small-up-2 medium-up-3">
                                 {
-                                    // JSON.stringify(allPetData)
                                     allPetData.map((animal, i) => {
-
-                                    //iterate thru each post and pass all their info to each cell
-                                         return (
-                                             <Cell key={i} {...animal} />
-                                         )
-                                     })
+                                        //iterate thru each post and pass all their info to each cell
+                                        return (
+                                            <Cell key={i} {...animal} />
+                                        )
+                                    })
                                 }
                             </div>
 
@@ -56,8 +52,6 @@ function AllPosts() {
             </div>
         </div>
     );
-
 }
-
 
 export default AllPosts;
