@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./footer.css"
 
 import GetAllPosts from "./GetAllPosts";
 
 class Landing extends Component {
   render() {
     return (
-      <div>
+      <div className="hero-section">
         <div style={{ height: "75vh" }} className="container valign-wrapper">
           <div className="row">
             <div className="col s12 center-align">
@@ -36,8 +37,9 @@ class Landing extends Component {
             </div>
           </div>
         </div>
-
+        <div>
         <GetAllPosts /> {/* Landing Page will include all posts for everyone to see*/}
+        </div>
       </div>
     );
   }

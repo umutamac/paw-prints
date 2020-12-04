@@ -34,7 +34,8 @@ function UploadPost() {
     const uploadform = (event) => {
         event.preventDefault()
 
-        let formData = new FormData();         //need to append all the values from the form in here using states
+        let formData = new FormData();  //need to append all the values from the form in here using states
+        // NON-URGENT POSSIBILITY: i could add the form id into FormData() so that I wouldnt have to do append for each input, need to test
         formData.append("name", petName)
         formData.append("petType", petType)
         formData.append("petColor", petColor)
@@ -42,7 +43,8 @@ function UploadPost() {
         formData.append("phoneNum", phone)
         formData.append("details", details)
         formData.append("file", img)
-        // NON-URGENT POSSIBILITY: i could add the form id into FormData() so that I wouldnt have to do append for each input, need to test
+        // need to add the author id or email to be sent to db
+        
 
         axios.post('/api/posts/imgup', formData).then((response) => {
             console.log(response)
@@ -50,6 +52,7 @@ function UploadPost() {
         })
     }
     return (
+        <div className="hero-section">
         <div>
             {redirect ? <Redirect push to='/dashboard' /> : <div id="redirect"></div> /*redirect user or add empty div (basically do nothing)*/}
 
@@ -70,6 +73,7 @@ function UploadPost() {
                     <button id="uploadBtn" type='submit'>Upload</button>
                 </form>
             </div>
+        </div>
         </div>
     );
 }

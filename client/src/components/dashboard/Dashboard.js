@@ -17,6 +17,7 @@ class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
     return (
+      <div className="hero-section">
       <div style={{ height: "75vh" }} className="container valign-wrapper">
 
         <div className="row">
@@ -44,6 +45,7 @@ class Dashboard extends Component {
         After creating a post, people will be redirected here
          */}
         
+      </div>
       </div>
     );
   }

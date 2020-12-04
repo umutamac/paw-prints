@@ -19,8 +19,14 @@ class Navbar extends Component {
                                 className="image"
                                 src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
                                 alt="paw prints" /></li>
-                        <li><a href="./signUpPageMockUp.html">Sign Up</a></li>
-                        <li><a href="./logInPageMockUp.html">Sign In</a></li>
+                        <li><Link to="/register">
+                          <a href="#">Sign Up</a>
+                            </Link>
+                        </li>
+                        <li><Link to="/login">
+                          <a href="#">Sign In</a>
+                            </Link>
+                        </li>
                         <li><img
                                 className="image"
                                 src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"

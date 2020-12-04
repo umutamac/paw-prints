@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import "../layout/footer.css"
 
 class Login extends Component {
 
@@ -56,6 +57,7 @@ render() {
     const { errors } = this.state;
     console.log(this.props.auth);
     return (
+      <div className="hero-section">
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">
@@ -64,6 +66,8 @@ render() {
               home
             </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <h1 id="title">Paw Prints</h1>
+            <h3 className="subTitle">Helping You Find Your Lost Companion</h3>
               <h4>
                 <b>Login</b> below
               </h4>
@@ -79,7 +83,7 @@ render() {
                   error={errors.email}
                   id="email"
                   type="email"
-                  className={classnames("", {invalid: errors.email || errors.emailnotfound})}
+                  className={classnames("input radius cell", {invalid: errors.email || errors.emailnotfound})}
                 />
                 <label htmlFor="email">Email</label>
                 <span className="red-text">
@@ -119,6 +123,7 @@ render() {
             </form>
           </div>
         </div>
+      </div>
       </div>
     );
   }

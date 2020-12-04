@@ -1,25 +1,39 @@
 /* body{
     background-image: linear-gradient(pink,blue);
 } */
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada');
+@import url('https://fonts.googleapis.com/css?family=Nerko+One');
+@import url('https://fonts.googleapis.com/css?family=Kalam');
 img{
   height: 50px;
 }
 .image{
   height: 50px;
 }
-#title, footer{
+#title, footer, .marketing-site-footer-bottom{
     text-align: center;
     font-family: 'Montserrat Subrayada', sans-serif;
 }
 
-.navbar{
+#navbar{
   background-color: #1262BB;
 }
- 
+label{
+  font-family: 'Nerko One', cursive;
+  font-size: x-large;
+}
+.input.radius{
+  border-radius: 5000px;
+  border-color: #0a0a0a;
+  border-width: 5px;
+}
+.subTitle {
+  font-family: 'Nerko One', cursive
+}
 h4 {
   font-family: 'Nerko One', cursive
 }
-cell, p {
+.cell, p {
   font-family: 'Kalam', cursive;
 }
 
@@ -81,7 +95,7 @@ cell, p {
   
   
 .hero-section, #this {
-    background-image: url("tealPrints.jpg") 50% no-repeat;
+    background: url("./tealPrints.jpg") 50% no-repeat;
     background-size: cover;
     height: 100%;
     text-align: center;
