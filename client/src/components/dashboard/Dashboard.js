@@ -18,7 +18,7 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     //console.log(user)
     return (
-      <div className="hero-section">
+      <div className="hero-section" id="dashboard">
         <div style={{ height: "75vh" }} className="container valign-wrapper">
 
           <div className="grid-x grid-padding-x">

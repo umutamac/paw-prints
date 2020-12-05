@@ -42,10 +42,10 @@ function UploadPost(props) {
         formData.append("phoneNum", phone);
         formData.append("details", details);
         formData.append("file", img);
-        formData.append("userID", props.auth.user.id); // get user id of current user, who will be the owner of this post
+        formData.append("userID", props.auth.user.id); // append user id of current user, who will be the owner of this post
 
         axios.post('/api/posts/imgup', formData).then((response) => {
-            console.log("Form has been submitted. Response:" + response);
+            console.log("-------> Form has been submitted. Response:" + response);
             setRedirect(true); //once the form is submitted and a response comes back, redirect user to dashboard
         })
     }

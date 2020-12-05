@@ -7,7 +7,7 @@ import GetAllPosts from "../components/layout/GetAllPosts";
 class Landing extends Component {
   render() {
     return (
-      <div className="hero-section">
+      <div className="hero-section" id="landing">
         <div style={{ height: "75vh" }} className="container valign-wrapper">
           <div className="row">
             <div className="col s12 center-align">

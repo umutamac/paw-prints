@@ -10,8 +10,8 @@ class Footer extends Component {
         <div className="row large-unstack align-middle">
             <div className="column">
                 <img  className="image" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
-                    alt="paw prints" /> {/*style="height:50px;"*/}
-                &copy; 2020 Group 3
+                    alt="paw prints" /> {/* can use src="../../assets/pawprints.jpg" instead */}
+                <span>&copy; 2020 Group 3</span>
                 <img  className="image" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
                     alt="paw prints" />{/*style="height:50px"*/}
             </div>
