@@ -1,5 +1,11 @@
+const express = require("express")
+const app = express();
 const router = require("express").Router();
-//const db = require("../../models");
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
+
+const db = require("../../models");
 const fs = require('fs') // bring in fs to delete file when finished
 const postController = require("../../controllers/postController");
 require('dotenv').config();
@@ -7,7 +13,7 @@ require('dotenv').config();
 //import multer and create a folder "uploads" to hold on to temp files
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
-const CircularJSON = require('circular-json');
+// const CircularJSON = require('circular-json');
 
 ///import cloudinary and configure to your bucket access
 const cloudinary = require('cloudinary').v2;
@@ -19,7 +25,7 @@ cloudinary.config({ // look at env for cloudinary config variables
 
 router.route("/allposts")
   .get(postController.findAll)
-  //.post(postController.create);
+//.post(postController.create);
 
 router.route("/:id")
   .get(postController.findById)
@@ -51,27 +57,31 @@ router.post("/imgup", upload.single('file'), function (req, res) {
       console.log(textResponse);
 
       // create an entry to db with form response
-      let result = postController.create(textResponse) 
+      let result = postController.create(textResponse)
       res.json(result); // send this to front end
     })
 })
 
 router.delete("/:id", function (req, res) {
-  let postToRemove = postController.findById; // find the post
+  console.log("1----------> benim id bu: " + req.params.id)
+  let mainID = req.params.id;
+  let imgIDToRemove;
+  db.Pets.findById(mainID)
+    .then(function (dbModel) { // dbModel is the post we found by id
+      console.log("2------> dbModel:")
+      console.log(dbModel);
 
-  console.log("res" + CircularJSON.stringify(res))
-  console.log(postToRemove)
-  let imgToRemove = postToRemove.imgPublicID // extract imgPublicID
-  console.log("imgPublicID to be removed: " + imgToRemove);
-  
-  cloudinary.uploader.destroy(imgToRemove, (result) => { // use imgPublicID to delete pic in Cloud
-    console.log("Image deleted from Cloudinary");
-    console.log(result); 
+      imgIDToRemove = dbModel.imgPublicID // extract imgPublicID
+      console.log("3----->imgPublicID to be removed: " + imgIDToRemove);
 
-  }).then(function () {
-      let deleteResult = postController.remove(); // delete the post from our db
-      res.json(deleteResult);
-  })
+      console.log("4-------->ana ID: " + mainID)
+      postController.remove(mainID); // delete the post from our db
+      console.log("5-------> Post deleted");
+
+      cloudinary.uploader.destroy(imgIDToRemove, (result) => { // use imgPublicID to delete pic in Cloud
+        console.log("6---->Image deleted from Cloudinary");
+        //console.log(result);
+      })
+    })
 })
-
 module.exports = router;

@@ -1,7 +1,7 @@
 const db = require("../models");
 
 module.exports = {
-  findAll: function(req, res) {
+  findAll: function (req, res) {
     db.Pets
       .find()
       .then(dbModel => res.json(dbModel))
@@ -10,24 +10,27 @@ module.exports = {
         console.log(err)
       });
   },
-  findById: function(req, res) {
+  findById: function (id) {
     db.Pets
-      .findById(req.params.id)
-      .then(dbModel => {
-        console.log(dbModel)
-        res.json(dbModel)
+      .findById(id, function (err, doc) {
+        if (err) {
+          console.log(err);
+        }
+        else {
+          console.log("Result : ", doc);
+          return JSON.stringify(doc);
+        }
       })
-      .catch(err => res.status(422).json(err));
   },
-  create: function(data) {
+  create: function (data) {
     db.Pets
       .create(data)
       .then(dbModel => {
-        console.log("***********\n"+JSON.stringify(dbModel))
+        console.log("***********\n" + JSON.stringify(dbModel))
         return dbModel
       })
-      // .catch(err => {
-      //   return status(422).json(err) });
+    // .catch(err => {
+    //   return status(422).json(err) });
   },
   // update: function(req, res) {
   //   db.Pets
@@ -35,12 +38,12 @@ module.exports = {
   //     .then(dbModel => res.json(dbModel))
   //     .catch(err => res.status(422).json(err));
   // },
-  remove: function(req, res) {
+  remove: function (id) {
     db.Pets
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+    .findByIdAndDelete(id, function (err) {
+      if(err) console.log(err);
+      //console.log("Successful deletion");
+    })
   }
 };
 
