@@ -7,7 +7,7 @@ import "./footer.css"
 function Cell(props) {
     function deleteFunction(id) {
         axios.delete("/api/posts/" + id)
-            .then(() => (console.log("Post deleted")))
+            .then(() => (window.location.reload(false)))
             .catch(err => (console.log(err)))
     }
     // console.log(props)

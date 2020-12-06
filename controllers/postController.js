@@ -1,4 +1,16 @@
 const db = require("../models");
+const fs = require('fs'); // bring in fs to delete file when finished
+//import multer and create a folder "uploads" to hold on to temp files
+require('dotenv').config();
+
+///import cloudinary and configure to your bucket access
+const cloudinary = require('cloudinary').v2;
+cloudinary.config({ // look at env for cloudinary config variables
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
+
 
 module.exports = {
   findAll: function (req, res) {
@@ -10,27 +22,38 @@ module.exports = {
         console.log(err)
       });
   },
-  findById: function (id) {
+  findById: function (req,res) {
     db.Pets
-      .findById(id, function (err, doc) {
-        if (err) {
-          console.log(err);
-        }
-        else {
-          console.log("Result : ", doc);
-          return JSON.stringify(doc);
-        }
-      })
+      .findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => {
+        res.status(422).json(err)
+        console.log(err)
+      });
   },
-  create: function (data) {
-    db.Pets
-      .create(data)
-      .then(dbModel => {
-        console.log("***********\n" + JSON.stringify(dbModel))
-        return dbModel
+  create: function (req, res) {
+    // the req.body has the text inputs, and req.file has the image file
+    let textPortion = req.body // save text portion of response in a variable
+
+    //////use cloudinary uploader to send file to bucket and upload response
+    cloudinary.uploader.upload(req.file.path, { tags: 'express_sample' })
+      .then(function (cloudRes) {
+        console.log('** file uploaded to Cloudinary service');
+        console.dir(cloudRes); // log the response from cloudianry
+
+        ////save the file path to temp folder and delete file
+        console.log(req.file.path + "\n^^^^^^^^^^^^^^")
+        fs.unlink(req.file.path, err => { if (err) { console.log(err) } })
+
+        // add url of the cloudianry response from into the text portion of form response
+        textPortion["imageURL"] = cloudRes.url; // to later retrieve and display images
+        textPortion["imgPublicID"] = cloudRes.public_id; // to later delete pics from cloudinary  
+
+        // create an entry to db with form response
+        db.Pets.create(textPortion)
+          .then(result => res.json(result))
+          .catch(err => console.log(err))
       })
-    // .catch(err => {
-    //   return status(422).json(err) });
   },
   // update: function(req, res) {
   //   db.Pets
@@ -38,12 +61,36 @@ module.exports = {
   //     .then(dbModel => res.json(dbModel))
   //     .catch(err => res.status(422).json(err));
   // },
-  remove: function (id) {
-    db.Pets
-    .findByIdAndDelete(id, function (err) {
-      if(err) console.log(err);
-      //console.log("Successful deletion");
-    })
+  remove: function (req, res) {
+    console.log("1----------> post ID: " + req.params.id)
+    let mainID = req.params.id;
+    let imgIDToRemove;
+    db.Pets.findById(mainID)
+      .then(function (document) { // "document" is the post we found by id
+        console.log("2------> dbModel:")
+        console.log(document);
+
+        imgIDToRemove = document.imgPublicID // extract imgPublicID
+        console.log("3----->imgPublicID to be removed: " + imgIDToRemove);
+        console.log("4-----> mainID: " + mainID)
+
+        // use imgPublicID to delete pic in Cloud
+        cloudinary.uploader.destroy(imgIDToRemove, () => {
+          console.log("6---->Cloudinary delete is running");
+        }).then(cloudResult => {
+          console.log("6---->Cloudinary delete is done");
+          console.log(cloudResult);
+          res.json(cloudResult);
+        })
+
+        // delete document from db
+        db.Pets.findByIdAndDelete(mainID)
+          .then(deleteResult => {
+            console.log("5-----> Post deleted");
+            res.json(deleteResult)
+          }).catch(err => console.log(err))
+
+      })
   }
 };
 
