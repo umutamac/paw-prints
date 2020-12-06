@@ -1,16 +1,14 @@
 const db = require("../models");
 const fs = require('fs'); // bring in fs to delete file when finished
-//import multer and create a folder "uploads" to hold on to temp files
-require('dotenv').config();
 
 ///import cloudinary and configure to your bucket access
+require('dotenv').config();
 const cloudinary = require('cloudinary').v2;
 cloudinary.config({ // look at env for cloudinary config variables
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
 });
-
 
 module.exports = {
   findAll: function (req, res) {
@@ -55,12 +53,6 @@ module.exports = {
           .catch(err => console.log(err))
       })
   },
-  // update: function(req, res) {
-  //   db.Pets
-  //     .findOneAndUpdate({ _id: req.params.id }, req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
   remove: function (req, res) {
     console.log("1----------> post ID: " + req.params.id)
     let mainID = req.params.id;
@@ -92,5 +84,11 @@ module.exports = {
 
       })
   }
+  // update: function(req, res) {
+  //   db.Pets
+  //     .findOneAndUpdate({ _id: req.params.id }, req.body)
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
 };
 
