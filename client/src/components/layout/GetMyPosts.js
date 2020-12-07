@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import axios from "axios";
 import Cell from "./Cell";
 
-function AllPosts() {
+function MyPosts(props) {
     let [allPetData, setAllPetData] = useState([]);
 
-    function updatepetdata(imgID) {
+    function updatePetData(imgID) {
         setAllPetData(  allPetData.filter(item => item.imgPublicID!==imgID) );
     } 
 
     useEffect(() => {
-        axios.get('/api/posts/allposts')
+        axios.get('/api/posts/' + props.auth.user.id)
             .then((dbresponse) => {
                 setAllPetData(dbresponse.data)
                 //console.log(allPetData);
             })
-    },[]) // empty array at the end to stop page from infinitely reloading
+    },[props.auth.user.id])
 
     return (
         <div>
@@ -23,12 +24,14 @@ function AllPosts() {
                 allPetData.map((animal, i) => {
                     //iterate thru each post and pass all their info to each cell
                     return (
-                        <Cell key={i} updatepetdata={updatepetdata} {...animal} />
+                        <Cell key={i} updatePetData={updatePetData} {...animal} />
                     )
                 })
             }
         </div>
     );
 }
-
-export default AllPosts;
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+export default connect(mapStateToProps)(MyPosts);

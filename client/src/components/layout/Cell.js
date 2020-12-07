@@ -1,13 +1,13 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import axios from "axios";
 import { connect } from "react-redux";
+import axios from "axios";
 import "./footer.css"
 
 function Cell(props) {
     function deleteFunction(id) {
         axios.delete("/api/posts/" + id)
-            .then(() => (window.location.reload(false)))
+            .then(() => (props.updatepetdata(props.imgPublicID)))
             .catch(err => (console.log(err)))
     }
     // console.log(props)
@@ -25,11 +25,11 @@ function Cell(props) {
                                             </p>
                     </div>
                     {
-                    props.auth.user.id === props.userID
-                    /* is current viewer    =    the one who posted this? */
-                        ? <button onClick={() => deleteFunction(props._id)}>Delete</button>
-                        : <div id="notTheOwnerOfPost"></div>
-                }
+                        props.auth.user.id === props.userID
+                            /* is current viewer    =    the one who posted this? */
+                            ? <button onClick={() => {deleteFunction(props._id)}}>Delete</button>
+                            : <div id="notTheOwnerOfPost"></div>
+                    }
                 </div>
 
             </div>

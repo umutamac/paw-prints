@@ -83,6 +83,15 @@ module.exports = {
           }).catch(err => console.log(err))
 
       })
+  },
+  findMany: function (req, res) { 
+    let thing = req.params.id;
+    db.Pets.find( {userID: thing} )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => {
+        res.status(422).json(err)
+        console.log(err)
+      });
   }
   // update: function(req, res) {
   //   db.Pets
