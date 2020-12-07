@@ -5,6 +5,10 @@ import Cell from "./Cell";
 function AllPosts() {
     let [allPetData, setAllPetData] = useState([]);
 
+    function updatepetdata(imgID) {
+        setAllPetData(  allPetData.filter(item => item.imgPublicID!==imgID) );
+    } 
+
     useEffect(() => {
         axios.get('/api/posts/allposts')
             .then((dbresponse) => {
@@ -19,7 +23,7 @@ function AllPosts() {
                 allPetData.map((animal, i) => {
                     //iterate thru each post and pass all their info to each cell
                     return (
-                        <Cell key={i} {...animal} />
+                        <Cell key={i} updatepetdata={updatepetdata} {...animal} />
                     )
                 })
             }
