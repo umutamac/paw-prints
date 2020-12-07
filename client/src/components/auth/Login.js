@@ -91,6 +91,7 @@ class Login extends Component {
                           error={errors.email}
                           id="email"
                           type="email"
+                          placeholder="Email"
                           className={classnames("input radius cell", { invalid: errors.email || errors.emailnotfound })}
                         />
                         
@@ -109,6 +110,7 @@ class Login extends Component {
                             error={errors.password}
                             id="password"
                             type="password"
+                            placeholder="Password"
                             className={classnames("", { invalid: errors.password || errors.passwordincorrect })}
                           />
                         </label>

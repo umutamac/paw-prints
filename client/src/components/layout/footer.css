@@ -13,7 +13,7 @@
 img{
   height: 50px;
 }
-unused{
+#email, #name, #password, #password2, #petName, #petType, #petColor, #petBreed, #details{
   display: block;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -38,6 +38,10 @@ unused{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border-radius: 40px;
+  border-color: #0077ea;
+  border-width: 5px;
+  font-family: 'Nerko One', cursive;
 }
 .image{
   height: 50px;
