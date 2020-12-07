@@ -46,6 +46,9 @@ unused{
     text-align: center;
     font-family: 'Montserrat Subrayada', sans-serif;
 }
+.title{
+  font-family: 'Bungee Shade', cursive;
+}
 #title{
   font-family: 'Bungee Shade', cursive;
 }

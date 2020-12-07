@@ -13,10 +13,10 @@ class Navbar extends Component {
 
                 <p id="ppaw ppawc">
    
-   <em>Paw</em>
+   <em className="title">Paw</em>
    <em className="planet left">🐾</em>
    
-   <em>prints</em>
+   <em className="title">prints</em>
    
  </p>
 
