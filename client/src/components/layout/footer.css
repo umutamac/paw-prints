@@ -146,6 +146,9 @@ label{
 .noBackground{
   background: none;
 }
+.petPic{
+  width: 220px;
+}
 .background {
   background: url("../../assets/tealPrints.jpg") 50% no-repeat;
 }
