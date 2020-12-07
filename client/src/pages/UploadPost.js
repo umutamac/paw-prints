@@ -71,7 +71,7 @@ function UploadPost(props) {
                         <label>Pet Color:<input id="petColor" type='text' name="petColor" placeholder="Color" encType="multipart/form-data" value={petColor} onChange={handleInp} /></label>
                         <label>Pet Breed:<input id="petBreed" type='text' name="petBreed" placeholder="Breed" encType="multipart/form-data" value={petBreed} onChange={handleInp} /></label>
 
-                        <label>Phone Number:<input id="phoneNum" type='text' name="phoneNum" placeholder="Callback number" encType="multipart/form-data" value={phone} onChange={handleInp} required /></label>
+                        
                         <label>Description:<textarea id="details" type='text' name="details" value={details} onChange={handleInp}
                             encType="multipart/form-data" placeholder="Further description of pet, when and where was it last seen?" required /></label>
                         <p className="nerko">You will need to upload a picture of your pet</p>

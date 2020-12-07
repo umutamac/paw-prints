@@ -85,6 +85,7 @@ class Register extends Component {
                         error={errors.name}
                         id="name"
                         type="text"
+                        placeholder="Name"
                         className={classnames("", { invalid: errors.name })}
                       />
                       
@@ -100,6 +101,7 @@ class Register extends Component {
                         error={errors.email}
                         id="email"
                         type="email"
+                        placeholder="Email"
                         className={classnames("", { invalid: errors.email })}
                       />
                       
@@ -115,6 +117,7 @@ class Register extends Component {
                           error={errors.password}
                           id="password"
                           type="password"
+                          placeholder="Password"
                           className={classnames("", { invalid: errors.password })}
                         />
                       </label>
@@ -130,6 +133,7 @@ class Register extends Component {
                         error={errors.password2}
                         id="password2"
                         type="password"
+                        placeholder="Confirm Password"
                         className={classnames("", { invalid: errors.password2 })}
                       />
                       </label>
