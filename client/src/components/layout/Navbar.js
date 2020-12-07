@@ -15,9 +15,7 @@ class Navbar extends Component {
    
    <em>Paw</em>
    <em className="planet left">🐾</em>
-   <em></em>
-   <em></em>
-   <em class="planet right">🐾</em>
+   
    <em>prints</em>
    
  </p>
