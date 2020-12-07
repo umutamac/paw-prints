@@ -11,11 +11,22 @@ class Navbar extends Component {
           <div className="top-bar nav-wrapper">
             <div className="top-bar-title">
 
+<<<<<<< HEAD
               <p id="ppaw ppawc">
                 <em>Paw</em>
                 <em className="planet left">🐾</em>
                 <em>prints</em>
               </p>
+=======
+                <p id="ppaw ppawc">
+   
+   <em className="title">Paw</em>
+   <em className="planet left">🐾</em>
+   
+   <em className="title">prints</em>
+   
+ </p>
+>>>>>>> 9df86e2e890420a9b9020ece21e657722da8b5f0
 
             </div>
             <div className="top-bar-right">
