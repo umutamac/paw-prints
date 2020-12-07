@@ -3,13 +3,16 @@
 This app is a platform where users can create posts about their lost pets, and others can see the post and reach out to the pet owner to give them information and help out. 
 
 ## Table of Contents
-* [Description](#Description)
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [License](#License)
-* [Questions](#Questions)
-* [Collaborators](#Collaborators)
-* [Additional Information](#Additional-Information)
+- [Paw Prints](#paw-prints)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Collaborators](#collaborators)
+      - [License](#license)
+      - [Questions?](#questions)
+      - [Additional Information](#additional-information)
+  - [Screenshot](#screenshot)
 
 ### Installation
 No installation needed, the app is deployed at: siteURL COMING SOON!
@@ -29,3 +32,8 @@ Alternatively, my email is: amacalptekin@gmail.com
 
 #### Additional Information
 None
+
+
+## Screenshot
+
+![Screenshot](asset/pawprint.png)
