@@ -13,7 +13,6 @@ class Register extends Component {
     this.state = {
       name: "",
       email: "",
-      phonenumber: "",
       password: "",
       password2: "",
       errors: {}
@@ -45,7 +44,6 @@ class Register extends Component {
     const newUser = {
       name: this.state.name,
       email: this.state.email,
-      phonenumber: this.state.phonenumber,
       password: this.state.password,
       password2: this.state.password2
     };
@@ -110,19 +108,6 @@ class Register extends Component {
                     <div className="medium-3 cell"></div>
                     <div className="medium-3 cell"></div>
                     <div className="medium-6 cell">
-                      <label htmlFor="phonenumber">Phone Number</label>
-                      <input
-                        onChange={this.onChange}
-                        value={this.state.phonenumber}
-                        error={errors.phonenumber}
-                        id="phonenumber"
-                        type="phonenumber"
-                      />
-                      
-                    </div>
-                    <div className="medium-3 cell"></div>
-                    <div className="medium-3 cell"></div>
-                    <div className="medium-6 cell">
                       <label htmlFor="password">Password
                         <input
                           onChange={this.onChange}
@@ -130,7 +115,7 @@ class Register extends Component {
                           error={errors.password}
                           id="password"
                           type="password"
-                          className={classnames("", { invalid: errors.password }), classnames("input radius")}
+                          className={classnames("", { invalid: errors.password })}
                         />
                       </label>
                       <span className="red-text">{errors.password}</span>

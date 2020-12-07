@@ -13,10 +13,6 @@ const userSchema = new Schema({
         required: true
         //validate: [({ length }) => length >= 6, "Password should be longer."]
     },
-    phonenumber: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         unique: true,

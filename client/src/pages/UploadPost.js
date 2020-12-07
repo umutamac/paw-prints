@@ -35,7 +35,7 @@ function UploadPost(props) {
 
         let formData = new FormData();  //need to append all the values from the form in here using states
         // NON-URGENT POSSIBILITY: i could add the form id into FormData() so that I wouldnt have to do append for each input, need to test
-        formData.append("name", petName);
+        formData.append("petName", petName);
         formData.append("petType", petType);
         formData.append("petColor", petColor);
         formData.append("petBreed", petBreed);

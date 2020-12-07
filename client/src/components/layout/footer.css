@@ -59,7 +59,7 @@ label{
   font-family: 'Nerko One', cursive;
   font-size: x-large;
 }
-.input.radius{
+.input.radius, .input-radius{
   border-radius: 40px;
   border-color: #0077ea;
   border-width: 5px;
@@ -150,7 +150,7 @@ label{
   background: none;
 }
 .petPic{
-  width: 220px;
+  width: 300px;
 }
 .background {
   background: url("../../assets/tealPrints.jpg") 50% no-repeat;
