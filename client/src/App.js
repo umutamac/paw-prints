@@ -9,14 +9,14 @@ import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import Landing from "./components/layout/Landing";
 import GetAllPosts from "./components/layout/GetAllPosts";
 
+import PrivateRoute from "./components/private-route/PrivateRoute";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import UploadPost from "./pages/UploadPost";
+import Landing from "./pages/Landing";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

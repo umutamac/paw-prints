@@ -30,7 +30,7 @@ const petsSchema = new Schema({
   imgPublicID: {
     type: String
   },
-  author: {
+  userID: {
     type: String
   },
   date_lost: { 

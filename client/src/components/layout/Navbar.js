@@ -34,8 +34,8 @@ class Navbar extends Component {
                     </ul>
                 </div>
             </div>
-        </nav>
-    </div>
+            </nav>
+          </div>
       // <div className="navbar-fixed">
       //   <nav className="z-depth-0">
       //     <div className="nav-wrapper white">
@@ -45,7 +45,7 @@ class Navbar extends Component {
       //         PAW-PRINTS
       //       </Link>
 
-            
+
       //     </div>
       //   </nav>
       // </div>
@@ -53,7 +53,7 @@ class Navbar extends Component {
   }
 }
 export default Navbar;
-{/*
+/*
             <div>
         <h1>Navbar Paw - Prints</h1>
         <Link to="/" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"} >
@@ -67,5 +67,5 @@ export default Navbar;
         </Link>
 
       </div>
-            
-            */}
+
+            */

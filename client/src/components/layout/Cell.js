@@ -1,33 +1,35 @@
 import React from "react";
 // import { Link } from "react-router-dom";
+import axios from "axios";
+import { connect } from "react-redux";
 import "./footer.css"
 
-import axios from "axios";
-import store from "../../store";
-
-function Cell(animals) {
+function Cell(props) {
     function deleteFunction(id) {
         axios.delete("/api/posts/" + id)
-            .then(() => (console.log("post deleted")))
+            .then(() => (window.location.reload(false)))
             .catch(err => (console.log(err)))
     }
+    // console.log(props)
 
     return (
         <div className="medium-4 cell">
-            <div className="cell" id={animals._id}>
+            <div className="cell" id={props._id}>
                 <div className="card">
-                    <img alt="animal_picture" src={animals.imageURL} />
+                    <img alt="animal_picture" src={props.imageURL} />
                     <div className="card-section">
-                        <h4 className="nerko">{animals.petType}</h4>
-                        <p>{animals.petName}, {animals.petBreed}, {animals.petColor}. <br />
-                            {animals.details}. <br />
-                                                Please call {animals.phoneNum} if seen
+                        <h4 className="nerko">{props.petType}</h4>
+                        <p>{props.petName}, {props.petBreed}, {props.petColor}. <br />
+                            {props.details}. <br />
+                                                Please call {props.phoneNum} if seen
                                             </p>
                     </div>
-                    <p>{store.user}hi</p>
-                    {true/* is current wiever the one who posted this? */
-                        ? <button onClick={() => deleteFunction(animals._id)}>Delete</button>
-                        : <div id="notTheOwnerOfPost"></div>}
+                    {
+                    props.auth.user.id === props.userID
+                    /* is current viewer    =    the one who posted this? */
+                        ? <button onClick={() => deleteFunction(props._id)}>Delete</button>
+                        : <div id="notTheOwnerOfPost"></div>
+                }
                 </div>
 
             </div>
@@ -35,4 +37,7 @@ function Cell(animals) {
     );
 }
 
-export default Cell;
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+export default connect(mapStateToProps)(Cell);
