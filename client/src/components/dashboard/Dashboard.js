@@ -23,6 +23,7 @@ class Dashboard extends Component {
             <div className="row">
               <div className="col s12 cell center-align">
               <h1 id="title">PawPrints</h1>
+    
               <h3 className="nerko">Helping You Find Your Lost Companion</h3>
               <hr/>
                 <h4 className="nerko">

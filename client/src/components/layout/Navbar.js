@@ -10,8 +10,17 @@ class Navbar extends Component {
         <nav className="z-depth-0">
             <div className="top-bar nav-wrapper">
                 <div className="top-bar-title">
-                    <img className="image" src="https://i.imgur.com/X8M0KiK.png"
-                        alt="paw prints" />
+
+                <p id="ppaw ppawc">
+   
+   <em>Paw</em>
+   <em className="planet left">🐾</em>
+   
+   <em>prints</em>
+   
+ </p>
+
+
                 </div>
                 <div className="top-bar-right">
                     <ul className="menu menu-hover-lines">
@@ -36,36 +45,7 @@ class Navbar extends Component {
             </div>
             </nav>
           </div>
-      // <div className="navbar-fixed">
-      //   <nav className="z-depth-0">
-      //     <div className="nav-wrapper white">
-      //       <Link to="/" style={{ fontFamily: "monospace" }}
-      //         className="col s5 brand-logo center black-text" >
-      //         <i className="material-icons">code</i>
-      //         PAW-PRINTS
-      //       </Link>
-
-
-      //     </div>
-      //   </nav>
-      // </div>
     );
   }
 }
 export default Navbar;
-/*
-            <div>
-        <h1>Navbar Paw - Prints</h1>
-        <Link to="/" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"} >
-          Log in
-        </Link>
-
-
-
-        <Link to="/signup" className={window.location.pathname === "/signup" || window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
-          Sign up
-        </Link>
-
-      </div>
-
-            */
