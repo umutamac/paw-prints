@@ -7,38 +7,52 @@ import GetAllPosts from "./GetAllPosts";
 class Landing extends Component {
   render() {
     return (
-      <div className="hero-section">
+      <div className="background">
+        <div className="col s12 center-align">
+                <h1 id="title">
+                  PawPrints
+                </h1>
+                <h4 className="nerko">
+                  Find Your Lost Pets Here
+                </h4>
+                </div>
         <div style={{ height: "75vh" }} className="container valign-wrapper">
-          <div className="row">
-            <div className="col s12 center-align">
-              <h4>
-                <b>Build</b> a login/auth app with the{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> stack from
-              scratch
-            </h4>
-              <p className="flow-text grey-text text-darken-1">
-                Create a (minimal) full-stack app with user authentication via
-                passport and JWTs
-            </p>
-              <br />
-              <div className="col s6">
-                <Link to="/register" style={{ width: "140px", borderRadius: "3px", letterSpacing: "1.5px" }}
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3" >
-                  Register
-              </Link>
-              </div>
+            <div className="row">
+            
+              <div className="col s12 center-align">
+                
+                <br />
+                <div className="col s6">
+                  <button type="submit" class="radius success button large">
+                    <Link to="/register" style={{ width: "140px", borderRadius: "3px", letterSpacing: "1.5px", color: "black" }}
+                      className="" >
+                      Register
+                    </Link>
+                  </button>
+                </div>
 
-              <div className="col s6">
-                <Link to="/login" style={{ width: "140px", borderRadius: "3px", letterSpacing: "1.5px" }}
-                  className="btn btn-large btn-flat waves-effect white black-text" >
-                  Log In
-              </Link>
+                <div className="col s6">
+                  <button type="submit" class="radius success button large">
+                                
+                  
+                    <Link to="/login" style={{ width: "140px", borderRadius: "3px", letterSpacing: "1.5px", color: "black" }}
+                      className="" >
+                      Log In
+                    </Link>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
         </div>
-        <div>
-        <GetAllPosts /> {/* Landing Page will include all posts for everyone to see*/}
+        <div className="hero-section noBackground">
+                <div className="grid-container">
+                <div className="grid-x grid-padding-x">
+                  <div className="medium-12 cell">
+                  <GetAllPosts /> 
+                  {/* Landing Page will include all posts for everyone to see*/}
+                </div>
+                </div>
+                </div>
         </div>
       </div>
     );

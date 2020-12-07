@@ -17,37 +17,38 @@ class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
     return (
-      <div className="hero-section">
-        <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div className="background">
+          <div style={{ height: "75vh" }} className="container valign-wrapper">
+            <div className="row">
+              <div className="col s12 cell center-align">
+              <h1 id="title">PawPrints</h1>
+              <h3 className="nerko">Helping You Find Your Lost Companion</h3>
+              <hr/>
+                <h4 className="nerko">
+                  <b className="nerko">Hey there,</b> {user.name.split(" ")[0]}
+                  <p className="flow-text grey-text text-darken-1">
+                    
+                  </p>
+                  <button className="radius success button large">
+                    <Link to="/upload" style={{ color: "black"}}>Create a post</Link>
+                  </button>
+                </h4>
+                <button type="submit" onClick={this.onLogoutClick} class="radius success button large" id="signUpButton">
+                              Logout
+                </button>
 
-          <div className="grid-x grid-padding-x">
-            <div className="medium-12 s12 cell center-align">
-              <h4>
-                <b>Hey there,</b> {user.name.split(" ")[0]}
-                <p className="flow-text grey-text text-darken-1">
-                  You are logged into a full-stack{" "}
-                  <span style={{ fontFamily: "monospace" }}>PAW PRINT</span> app 👏
-                </p>
-                <Link to="/upload">Create a post</Link>
-
-              </h4>
-              <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}
-                onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3" >
-                Logout
-              </button>
-              <div className="medium-12">
-                <GetAllPosts />
               </div>
+
             </div>
-
           </div>
-
-          {/* 
-        The home page for loggen in people will include this page.
-        After creating a post, people will be redirected here
-         */}
-
+          <div className="hero-section noBackground">
+                <div className="col s12 center-align">
+                  <GetAllPosts /> 
+                  {/* 
+                    The home page for loggen in people will include this page.
+                    After creating a post, people will be redirected here
+                  */}
+                </div>
         </div>
       </div>
     );

@@ -10,14 +10,14 @@ class Navbar extends Component {
         <nav className="z-depth-0">
             <div className="top-bar nav-wrapper">
                 <div className="top-bar-title">
-                    <img className="image" src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                    <img className="image" src="https://i.imgur.com/X8M0KiK.png"
                         alt="paw prints" />
                 </div>
                 <div className="top-bar-right">
                     <ul className="menu menu-hover-lines">
                         <li><img
                                 className="image"
-                                src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                                src="https://i.imgur.com/X8M0KiK.png"
                                 alt="paw prints" /></li>
                         <li><Link to="/register">
                           <a href="#">Sign Up</a>
@@ -29,7 +29,7 @@ class Navbar extends Component {
                         </li>
                         <li><img
                                 className="image"
-                                src="https://assets.stickpng.com/images/58aeffe6c869e092af51ee78.png"
+                                src="https://i.imgur.com/X8M0KiK.png"
                                 alt="paw prints" /></li>
                     </ul>
                 </div>

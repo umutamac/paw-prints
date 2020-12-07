@@ -4,8 +4,35 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada');
 @import url('https://fonts.googleapis.com/css?family=Nerko+One');
 @import url('https://fonts.googleapis.com/css?family=Kalam');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
 img{
   height: 50px;
+}
+unused{
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.4375rem;
+  margin: 0 0 1rem;
+  padding: .5rem;
+  border: 1px solid #cacaca;
+  border-radius: 0;
+  background-color: #fefefe;
+  -webkit-box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+  box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0a0a0a;
+  -webkit-transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+  transition: border-color .25s ease-in-out,-webkit-box-shadow .5s;
+  transition: box-shadow .5s,border-color .25s ease-in-out;
+  transition: box-shadow .5s,border-color .25s ease-in-out,-webkit-box-shadow .5s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .image{
   height: 50px;
@@ -14,7 +41,9 @@ img{
     text-align: center;
     font-family: 'Montserrat Subrayada', sans-serif;
 }
-
+#title{
+  font-family: 'Bungee Shade', cursive;
+}
 #navbar{
   background-color: #1262BB;
 }
@@ -23,16 +52,15 @@ label{
   font-size: x-large;
 }
 .input.radius{
-  border-radius: 5000px;
-  border-color: #0a0a0a;
+  border-radius: 40px;
+  border-color: #0077ea;
   border-width: 5px;
 }
-.subTitle {
+
+.subTitle, .nerko, h4{
   font-family: 'Nerko One', cursive
 }
-h4 {
-  font-family: 'Nerko One', cursive
-}
+
 .cell, p {
   font-family: 'Kalam', cursive;
   
@@ -110,7 +138,12 @@ h4 {
         -ms-flex-pack: center;
             justify-content: center;
 }
-
+.noBackground{
+  background: none;
+}
+.background {
+  background: url("./tealPrints.jpg") 50% no-repeat;
+}
 .hero-section .hero-section-text {
   color: #fefefe;
   text-shadow: 1px 1px 2px #0a0a0a;
@@ -216,6 +249,15 @@ h4 {
 
 .marketing-site-footer-bottom .marketing-site-footer-bottom-links a {
   color: #8aa0ae;
+}
+.button.radius, .landing{
+  border-color: #0077ea;
+  border-width: 5px;
+  border-style: groove;
+  border-radius: 5000px;
+  font-family: 'Nerko One', cursive;
+  font-size: x-large;
+
 }
 
 @media screen and (max-width: 63.9375em) {

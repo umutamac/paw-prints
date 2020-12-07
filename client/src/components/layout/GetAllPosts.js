@@ -14,7 +14,7 @@ function AllPosts() {
     })
 
     return (
-        <div className="small-up-2 medium-up-3">
+        <div>
             {
                 allPetData.map((animal, i) => {
                     //iterate thru each post and pass all their info to each cell

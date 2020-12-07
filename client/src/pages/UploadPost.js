@@ -53,27 +53,30 @@ function UploadPost() {
     }
     return (
         <div className="hero-section">
-        <div>
-            {redirect ? <Redirect push to='/dashboard' /> : <div id="redirect"></div> /*redirect user or add empty div (basically do nothing)*/}
+            <div>
+                {redirect ? <Redirect push to='/dashboard' /> : <div id="redirect"></div> /*redirect user or add empty div (basically do nothing)*/}
 
-            <div id="UploadPostContainer" >
-                <form id="postForm" onSubmit={uploadform}>
-                    <h1>Create a post</h1>
-                    <p>You will need to upload a picture of your pet</p>
-                    <input id="petName" type='text' name="petName" placeholder="Pet Name" encType="multipart/form-data" value={petName} onChange={handleInp} />
-                    <input id="petType" type='text' name="petType" placeholder="Animal type (cat, dog, etc.)" encType="multipart/form-data" value={petType} onChange={handleInp} />
-                    <input id="petColor" type='text' name="petColor" placeholder="Color" encType="multipart/form-data" value={petColor} onChange={handleInp} />
-                    <input id="petBreed" type='text' name="petBreed" placeholder="Breed" encType="multipart/form-data" value={petBreed} onChange={handleInp} />
+                <div id="UploadPostContainer" >
+                <h1 id="title">PawPrints</h1>
+                <h3 className="nerko">Helping You Find Your Lost Companion</h3>
+                <hr/>
+                    <form className="nerko" id="postForm" onSubmit={uploadform}>
+                        <h3 className="nerko">Create a post</h3>
+                        <p className="nerko">You will need to upload a picture of your pet</p>
+                        <input id="petName" type='text' name="petName" placeholder="Pet Name" encType="multipart/form-data" value={petName} onChange={handleInp} />
+                        <input id="petType" type='text' name="petType" placeholder="Animal type (cat, dog, etc.)" encType="multipart/form-data" value={petType} onChange={handleInp} />
+                        <input id="petColor" type='text' name="petColor" placeholder="Color" encType="multipart/form-data" value={petColor} onChange={handleInp} />
+                        <input id="petBreed" type='text' name="petBreed" placeholder="Breed" encType="multipart/form-data" value={petBreed} onChange={handleInp} />
 
-                    <input id="phoneNum" type='text' name="phoneNum" placeholder="Callback number" encType="multipart/form-data" value={phone} onChange={handleInp} required />
-                    <textarea id="details" type='text' name="details" value={details} onChange={handleInp}
-                        encType="multipart/form-data" placeholder="Further description of pet, when and where was it last seen?" required />
+                        <input id="phoneNum" type='text' name="phoneNum" placeholder="Callback number" encType="multipart/form-data" value={phone} onChange={handleInp} required />
+                        <textarea id="details" type='text' name="details" value={details} onChange={handleInp}
+                            encType="multipart/form-data" placeholder="Further description of pet, when and where was it last seen?" required />
 
-                    <input id="petImg" type='file' name="file" accept="image/*" encType="multipart/form-data" onChange={handleFile} required />
-                    <button id="uploadBtn" type='submit'>Upload</button>
-                </form>
+                        <input id="petImg" type='file' name="file" accept="image/*" encType="multipart/form-data" onChange={handleFile} required />
+                        <button id="uploadBtn" type='submit' className="success large button radiius">Upload</button>
+                    </form>
+                </div>
             </div>
-        </div>
         </div>
     );
 }
