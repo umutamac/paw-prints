@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from "axios";
 import { connect } from "react-redux";
 
@@ -60,18 +60,21 @@ function UploadPost(props) {
                 <h1 id="title">PawPrints</h1>
                 <h3 className="nerko">Helping You Find Your Lost Companion</h3>
                 <hr/>
+                <Link to="/dashboard" className="btn-flat waves-effect nerko">
+                <i className="material-icons left">keyboard_backspace</i> 
+                Back to home
+                </Link>
                     <form className="nerko" id="postForm" onSubmit={uploadform}>
                         <h3 className="nerko">Create a post</h3>
+                        <label>Pet Name:<input id="petName" type='text' name="petName" placeholder="Pet Name" encType="multipart/form-data" value={petName} onChange={handleInp} /></label>
+                        <label>Pet Type:</label><input id="petType" type='text' name="petType" placeholder="Animal type (cat, dog, etc.)" encType="multipart/form-data" value={petType} onChange={handleInp} />
+                        <label>Pet Color:<input id="petColor" type='text' name="petColor" placeholder="Color" encType="multipart/form-data" value={petColor} onChange={handleInp} /></label>
+                        <label>Pet Breed:<input id="petBreed" type='text' name="petBreed" placeholder="Breed" encType="multipart/form-data" value={petBreed} onChange={handleInp} /></label>
+
+                        <label>Phone Number:<input id="phoneNum" type='text' name="phoneNum" placeholder="Callback number" encType="multipart/form-data" value={phone} onChange={handleInp} required /></label>
+                        <label>Description:<textarea id="details" type='text' name="details" value={details} onChange={handleInp}
+                            encType="multipart/form-data" placeholder="Further description of pet, when and where was it last seen?" required /></label>
                         <p className="nerko">You will need to upload a picture of your pet</p>
-                        <input id="petName" type='text' name="petName" placeholder="Pet Name" encType="multipart/form-data" value={petName} onChange={handleInp} />
-                        <input id="petType" type='text' name="petType" placeholder="Animal type (cat, dog, etc.)" encType="multipart/form-data" value={petType} onChange={handleInp} />
-                        <input id="petColor" type='text' name="petColor" placeholder="Color" encType="multipart/form-data" value={petColor} onChange={handleInp} />
-                        <input id="petBreed" type='text' name="petBreed" placeholder="Breed" encType="multipart/form-data" value={petBreed} onChange={handleInp} />
-
-                        <input id="phoneNum" type='text' name="phoneNum" placeholder="Callback number" encType="multipart/form-data" value={phone} onChange={handleInp} required />
-                        <textarea id="details" type='text' name="details" value={details} onChange={handleInp}
-                            encType="multipart/form-data" placeholder="Further description of pet, when and where was it last seen?" required />
-
                         <input id="petImg" type='file' name="file" accept="image/*" encType="multipart/form-data" onChange={handleFile} required />
                         <button id="uploadBtn" type='submit' className="success large button radiius">Upload</button>
                     </form>

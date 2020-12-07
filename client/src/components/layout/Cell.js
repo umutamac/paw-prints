@@ -16,7 +16,7 @@ function Cell(props) {
         <div className="medium-4 cell">
             <div className="cell" id={props._id}>
                 <div className="card">
-                    <img alt="animal_picture" src={props.imageURL} />
+                    <img className="petPic"alt="animal_picture" src={props.imageURL} />
                     <div className="card-section">
                         <h4 className="nerko">{props.petType}</h4>
                         <p>{props.petName}, {props.petBreed}, {props.petColor}. <br />
