@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import axios from "axios";
 import { connect } from "react-redux";
+import axios from "axios";
 import "./footer.css"
 
 function Cell(props) {
@@ -27,7 +27,7 @@ function Cell(props) {
                     {
                         props.auth.user.id === props.userID
                             /* is current viewer    =    the one who posted this? */
-                            ? <button onClick={() => {deleteFunction(props._id);console.log("userID: "+props.auth.user.id);}}>Delete</button>
+                            ? <button onClick={() => {deleteFunction(props._id)}}>Delete</button>
                             : <div id="notTheOwnerOfPost"></div>
                     }
                 </div>
