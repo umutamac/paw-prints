@@ -153,11 +153,10 @@ label{
 .noBackground{
   background: none;
 }
-.petPic{
-  width: 300px;
-}
+
 .background {
-  background: url("../../assets/tealPrints.jpg") 50% no-repeat;
+  background: url("../../assets/tealPrints.jpg") no-repeat;
+  background-size: cover;
 }
 .hero-section .hero-section-text {
   color: #fefefe;
@@ -166,6 +165,7 @@ label{
 /* .grid-container{
   
 } */
+
 .pagination-pointed .pagination-pointed-button, .pagination-pointed .current, .pagination-pointed .pagination-previous {
   position: relative;
   display: inline-block;
@@ -274,6 +274,40 @@ label{
   font-size: x-large;
 
 }
+.petPic{
+  width: 250px;
+  height: 250px;
+  align-self: center;
+
+  /*border-color: #0077ea;*/
+  border-width: 5px;
+  border-style: double;
+  border-radius: 10px;
+  /*margin-bottom: ;*/
+}
+.petCard {
+  padding: 10px 0px;
+  width: 400px;
+  height: 520px;
+
+  border-color: #0077ea;
+  border-width: 10px;
+  border-style: groove;
+  border-radius: 50px;
+
+  background-color: #3adb76;
+}
+.deleteBTN{
+  color: red;
+  font-size: x-large;
+  font-weight: 800;
+  text-align: right;
+text-align: justify;
+}
+/*.delDiv{
+text-align: right;
+text-align: justify;
+}*/
 
 @media screen and (max-width: 63.9375em) {
   .marketing-site-footer-bottom .marketing-site-footer-bottom-links {

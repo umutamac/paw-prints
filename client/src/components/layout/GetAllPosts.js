@@ -18,7 +18,7 @@ function AllPosts() {
     },[]) // empty array at the end to stop page from infinitely reloading
 
     return (
-        <div>
+        <div className="grid-x grid-padding-x">
             {
                 allPetData.map((animal, i) => {
                     //iterate thru each post and pass all their info to each cell

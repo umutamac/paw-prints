@@ -16,7 +16,7 @@ class Landing extends Component {
                   Find Your Lost Pets Here
                 </h4>
                 </div>
-        <div style={{ height: "75vh" }} className="container valign-wrapper">
+        <div style={{ height: "25vh" }} className="container valign-wrapper">
             <div className="row">
             
               <div className="col s12 center-align">
