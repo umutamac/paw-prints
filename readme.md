@@ -16,7 +16,7 @@ This app is a platform where users can create posts about their lost pets, and o
 
 ### Installation
 ---Currently, the app works on browsers with Redux DevTool extension already installed. This issue will be fixed---
-The app is deployed at: siteURL COMING SOON!
+The app is deployed at: https://mypawprints.herokuapp.com/!
 
 ### Usage
 Users can sign up to the app, and then create posts by typing in information about the pet and uploading an image. These posts are shown to everyone, so that whoever sees the post can reach out to post owner. There isn't a built-in chat function, so the posts will require a contact information from the creator. Once the pet is found and case if closed, the post owner can delete the post.
