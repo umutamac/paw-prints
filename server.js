@@ -13,50 +13,38 @@ const PORT = process.env.PORT || 3001; // backend server runs from this port
 
 // Define Bodyparser middleware here
 //new
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
-
-//app.use(express.urlencoded({ extended: true }));
-//app.use(express.json());
-
-
-// DB Config - new
-const db = require("./config/keys").mongoURI;
-
-// Connect to MongoDB - new
-mongoose
-  .connect(process.env.MONGODB_URI ||db,{useNewUrlParser: true, useCreateIndex: true})
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
-
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-//checking connections
-//app.get('/', (req, res) => {
-// res.send('Project 3')
-//})
-
+// Passport config
+require("./config/passport")(passport);
 // Passport middleware
 app.use(passport.initialize());
 
-// Passport config
-require("./config/passport")(passport);
+
+// DB Config and Connect to MongoDB - new
+const db = require("./config/keys").mongoURI;
+mongoose
+  .connect(process.env.MONGODB_URI || db,
+    { useNewUrlParser: true, useCreateIndex: true }
+  )
+  .then(() => console.log("MongoDB successfully connected"))
+  .catch(err => console.log(err));
+
+// Connect to the Mongo DB
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pawprint");
+
 
 // Routes
 //app.use(routes)
 app.use("/api/users", users);
 app.use("/api/posts", posts);
 
-
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pawprint");
-
-
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
